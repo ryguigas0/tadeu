@@ -6,6 +6,5 @@ O criador de ficha de O Som Das Seis
 - Bootstrap
 - TELAS
 	- Landing page
-	- Criar
-	- Editar
+	- Criar / Editar
 	- Listagem (botão editar e criar)
