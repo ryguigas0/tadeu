@@ -10,7 +10,9 @@ app.run({
 		host: "localhost",
 		port: 3306,
 		user: "root",
-		password: "root",
-		database: "agenda"
-	}
+		password: "toor",
+		database: "agenda",
+	},
+	logRoutesToConsole: true,
+	port: 3000
 });
