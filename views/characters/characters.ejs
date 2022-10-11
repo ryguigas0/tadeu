@@ -1,8 +1,37 @@
 <div class="container-fluid">
-    <div class="row welcome">
+    <% if (personagens.length==0 ) { %>
+        <div class="row welcome">
             <div class="welcome-sign">
                 Você ainda precisa criar seu primeiro personagem!
                 <a class="btn btn-primary" href="/create" role="button">Crie o seu personagem</a>
             </div>
-    </div>
+        </div>
+        <% } else { %>
+            <h1>Seus personagens</h1>
+            <a class="btn btn-primary" href="/create" role="button">Crie o seu personagem</a>
+            <div class="scroll-characters modal-content">
+                <% for( let i=0; i < personagens.length; i++ ) { %>
+                    <div class="character">
+                        <img src="/public/svg/character-icon-template.svg" alt="<%= personagens[i].name %>"
+                            class="character-icon">
+                        <div class="character-name">
+                            <%= personagens[i].name %>
+                        </div>
+                        <div>
+                            <div class="character-level">
+                                <%= personagens[i].level %>
+                            </div>
+                            <div class="character-hp">
+                                <%= personagens[i].hp %>
+                            </div>
+                            <div class="character-def">
+                                <%= personagens[i].def %>
+                            </div>
+                        </div>
+                    </div>
+                    <% } %>
+            </div>
+            <% } %>
+
+
 </div>
