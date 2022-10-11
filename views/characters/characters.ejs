@@ -3,12 +3,12 @@
         <div class="row welcome">
             <div class="welcome-sign">
                 Você ainda precisa criar seu primeiro personagem!
-                <a class="btn btn-primary" href="/create" role="button">Crie o seu personagem</a>
+                <a class="btn btn-danger" href="/create" role="button">Crie o seu personagem</a>
             </div>
         </div>
         <% } else { %>
             <h1>Seus personagens</h1>
-            <a class="btn btn-primary" href="/create" role="button">Crie o seu personagem</a>
+            <a class="btn btn-danger" href="/create" role="button">Crie o seu personagem</a>
             <div class="scroll-characters modal-content">
                 <% for( let i=0; i < personagens.length; i++ ) { %>
                     <div class="character">
