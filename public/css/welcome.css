@@ -1,0 +1,12 @@
+.welcome {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+
+.welcome-sign {
+    display: flex;
+    flex-direction: column;
+    max-width: 20%;
+}
