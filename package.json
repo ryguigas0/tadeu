@@ -3,7 +3,6 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "dev": "ts-node src/app",
     "prod": "tsc && node ."
   },
   "description": "projeto",
