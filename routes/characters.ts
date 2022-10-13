@@ -10,8 +10,8 @@ const personagemTemplate = new Array(10).fill({
 
 
 class CharactersRoute {
-    public async characters(req: app.Request, res: app.Response) {
-        res.render("characters/characters", {
+    public async index(req: app.Request, res: app.Response) {
+        res.render("characters/index", {
             titulo: nomeProjeto, personagens: personagemTemplate
         })
     }

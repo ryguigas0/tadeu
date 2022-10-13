@@ -8,5 +8,20 @@
 .welcome-sign {
     display: flex;
     flex-direction: column;
-    max-width: 20%;
+    max-width: 70%;
+    text-align: center;
+}
+
+.character-list {
+    /* max-width: 50%; */
+}
+
+.character {
+    border: 1px black solid;
+    /* background-color: aquamarine; */
+    font-size: 1.3rem;
+}
+
+.character-icon {
+    min-width: 70%;
 }
