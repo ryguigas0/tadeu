@@ -15,10 +15,13 @@
             </div>
             <div class="character-list row justify-content-sm-center pt-3">
                 <% for( let i=0; i < personagens.length; i++ ) { %>
-                    <div class="character col-sm-5 col-md-4 col-lg-3 m-3">
+                    <a href=<%- `/characters/${personagens[i].id}` %> id="character" class="character col-sm-5 col-md-4
+                        col-lg-3 m-3">
                         <div class="row justify-content-center">
-                            <img src="/public/svg/character-icon-template.svg" alt="<%= personagens[i].name %>"
-                                class="character-icon">
+                            <img src="
+                            <%=" /public/" + ((typeof personagens[i].icon==="undefined" || !personagens[i].icon)
+                                ? "svg/character-icon-template.svg" : "img/" + personagens[i].icon) %>"
+                            class="character-icon">
                         </div>
 
                         <div class="row justify-content-center">
@@ -38,7 +41,7 @@
                                 EXP: <%= personagens[i].def %>
                             </div>
                         </div>
-                    </div>
+                    </a>
                     <% } %>
             </div>
             <% } %>
