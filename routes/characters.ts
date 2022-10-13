@@ -12,8 +12,7 @@ class CharactersRoute {
                 titulo: nomeProjeto, personagens: db.getPersonagens()
             })
         } else {
-
-            const personagem = db.getPersonagens()[characterId]
+            const personagem = db.getPersonagem(Number.parseInt(characterId))
 
             res.render("characters/character", {
                 titulo: nomeProjeto, personagem: personagem

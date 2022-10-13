@@ -259,5 +259,9 @@ export default {
 
     getPersonagens() {
         return this.personagens
+    },
+
+    getPersonagem(id: number) {
+        return this.personagens[id]
     }
 }
