@@ -1,0 +1,44 @@
+<div class="page mx-auto d-flex flex-column align-center">
+    <div class="form-section d-flex flex-column align-center" data-section="1">
+        <div class="row">
+            <div class="col character-image">
+                <label for="chracter-image">
+                    <img src="/public/svg/character-icon-template.svg" alt="Character icon" class="character-icon">
+                    <input type="file" id="chracter-image" hidden>
+                </label>
+            </div>
+            <div class="col">
+                <div class="row">
+                    <label for="character-name">Nome: </label>
+                    <input type="text" id="character-name">
+                </div>
+                <div class="row">
+                    <div class="col-sm-6 p-2">
+                        <label for="character-level">Nível: </label>
+                        <input type="number" id="character-level">
+                    </div>
+                    <div class="col-sm-6 p-2">
+                        <label for="character-xp">XP: </label>
+                        <input type="number" id="character-xp">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row d-flex justify-content-around">
+            <label for="tormento">Tormento</label>
+            <select id="tormento" onchange="updateSubtormentos(this)">
+                <option value="1" selected>Vingança</option>
+                <option value="2">Vingança</option>
+                <option value="3">Vingança</option>
+                <option value="4">Vingança</option>
+                <option value="5">Vingança</option>
+                <option value="6">Vingança</option>
+            </select>
+        </div>
+        <div class="row d-flex justify-content-around">
+            <label for="subtormento">Subtormento</label>
+            <select id="subtormento">
+            </select>
+        </div>
+    </div>
+</div>
