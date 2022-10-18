@@ -3,7 +3,8 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "prod": "tsc && node ."
+    "prod": "tsc && node .",
+    "dev": "tsc && nodemon ."
   },
   "description": "projeto",
   "author": {
@@ -17,6 +18,7 @@
     "@types/express": "4.17.13",
     "@types/express-serve-static-core": "4.17.24",
     "@types/node": "14.14.21",
+    "nodemon": "^2.0.20",
     "ts-node": "^10.9.1"
   },
   "engines": {
