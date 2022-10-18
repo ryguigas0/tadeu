@@ -10,9 +10,6 @@ let currFormIndex = 1
 
 const maxFormIndex = 5
 
-handleNextSection();
-handleNextSection();
-
 
 function updateSubtormentos(tormentoSelect) {
     const subtormentoSelect = document.getElementById("subtormento")
