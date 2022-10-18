@@ -26,3 +26,9 @@ img {
 input {
     width: 100%;
 }
+
+.vertical-scroll{
+    overflow-y: auto;
+    overflow-x: hidden;
+    max-height: 10rem;
+}

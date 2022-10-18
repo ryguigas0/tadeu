@@ -17,7 +17,7 @@ export default {
             coragem: 1
         },
         hp: 11,
-        defesa: 5,
+        def: 5,
         iniciativa: 2,
         acoes: 2,
         antecedentesPontos: 5,
