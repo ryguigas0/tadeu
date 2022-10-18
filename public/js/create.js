@@ -1,5 +1,14 @@
 const tormentoSelect = document.querySelector("#tormento")
-updateSubtormentos(tormentoSelect)
+
+if (tormentoSelect) {
+    updateSubtormentos(tormentoSelect)
+}
+
+let currFormIndex = 1
+
+const maxFormIndex = 5
+
+// handleNextSection();
 
 
 function updateSubtormentos(tormentoSelect) {
@@ -52,4 +61,51 @@ function updateSubtormentos(tormentoSelect) {
     subtormentoList.forEach((subtormento, index) => {
         subtormentoSelect.innerHTML += `<option value="${tormentoValue}-${index + 1}">${subtormento}</option>`
     })
+}
+
+function handleNextSection() {
+    const beforeTabIndex = currFormIndex;
+    currFormIndex += 1;
+
+    if (currFormIndex > maxFormIndex) {
+        window.location.href = "/characters/1"
+        return
+    }
+
+
+    const beforeSection = document.querySelector(`#section${beforeTabIndex}`)
+
+    beforeSection.classList.remove("show", "active")
+    beforeSection.classList.add("invisible")
+
+    const nextSection = document.querySelector(`#section${currFormIndex}`)
+
+    nextSection.classList.add("show", "active")
+    nextSection.classList.remove("invisible")
+
+
+
+}
+
+function handleBackSection() {
+    const beforeTabIndex = currFormIndex;
+    currFormIndex -= 1;
+
+    if (currFormIndex <= 0) {
+        window.location.href = "/characters"
+        return
+    }
+
+    let beforeSection = document.querySelector(`#section${beforeTabIndex}`)
+
+    beforeSection.classList.remove("show", "active")
+    beforeSection.classList.add("invisible")
+
+    let nextSection = document.querySelector(`#section${currFormIndex}`)
+
+    nextSection.classList.add("show", "active")
+    nextSection.classList.remove("invisible")
+
+
+
 }

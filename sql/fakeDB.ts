@@ -257,6 +257,8 @@ export default {
         }
     }),
 
+    // personagens: [],
+
     getPersonagens() {
         return this.personagens
     },
