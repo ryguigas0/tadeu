@@ -4,11 +4,14 @@ if (tormentoSelect) {
     updateSubtormentos(tormentoSelect)
 }
 
+setHabilidades()
+
 let currFormIndex = 1
 
 const maxFormIndex = 5
 
-// handleNextSection();
+handleNextSection();
+handleNextSection();
 
 
 function updateSubtormentos(tormentoSelect) {
@@ -108,4 +111,26 @@ function handleBackSection() {
 
 
 
+}
+
+function setHabilidades() {
+
+    const hab1 = document.querySelector("#character-hab-1")
+    const hab2 = document.querySelector("#character-hab-2")
+
+    const habilidades = new Array(24).fill({
+        nome: "Carry on my wayward son",
+        descricao: "Inspirações e bônus para outros personagens"
+    }).map((val, i, arr) => {
+        val["index"] = i
+        return val
+    })
+
+    habilidades.forEach((val, i, arr) => {
+        hab1.innerHTML += `<option value="${i}">${val.nome} ${val.descricao}</option>`
+    })
+
+    habilidades.forEach((val, i, arr) => {
+        hab2.innerHTML += `<option value="${i}">${val.nome} ${val.descricao}</option>`
+    })
 }
