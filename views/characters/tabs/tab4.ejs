@@ -1,0 +1,43 @@
+<div class="tab-pane invisible" id="section4" role="tabpanel">
+
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-9">
+                <h2>Equipamentos</h2>
+            </div>
+            <div class="col-sm-3">
+                <h2>Dano</h2>
+            </div>
+        </div>
+        <div class="row  vertical-scroll">
+            <div class="col-sm-9">
+                <% for( let i=0; i < 10; i++ ) { %>
+                    <input type="text" id="item-<%-`${i}`%>">
+                    <% } %>
+            </div>
+            <div class="col-sm-3">
+                <% for( let i=0; i < 10; i++ ) { %>
+                    <input type="text" id="dmg-<%-`${i}`%>">
+                    <% } %>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-3 d-flex flex-row">
+                <input type="checkbox" id="has-horse">
+                <label for="has-horse">O personagem tem cavalo?</label>
+            </div>
+            <div class="col-sm-4 d-flex flex-row">
+                <label for="dinheiro">Dinheiro: </label>
+                <input type="number" id="dinheiro">
+            </div>
+        </div>
+    </div>
+
+
+
+    <div
+        class="row d-flex flex-row pt-2 mx-auto justify-content button-navigator justify-content-center">
+        <button onclick="handleBackSection()">Anterior</button>
+        <button onclick="handleNextSection()">Próximo</button>
+    </div>
+</div>

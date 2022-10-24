@@ -1,3 +1,16 @@
+
+body {
+    background-image: url('/public/img/fundo-cavalo.png');
+    background-size: cover;
+    background-position: center;
+}
+
+.page {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
 .create-character {
     background-image: url("/public/img/fundo-pergaminho.png");
     background-repeat: no-repeat;
@@ -11,7 +24,7 @@
 .form-section {
     background-color: rgba(255, 255, 255, 0.8);
     background-size: cover;
-    margin: auto;
+    margin: auto 0;
 }
 
 .character-icon {
