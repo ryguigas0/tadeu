@@ -1,66 +1,67 @@
 <div class="tab-pane invisible" id="section3" role="tabpanel">
-    <div class="col">
-        <div class="row d-flex justify-content-center">
-            <h3>Antecedentes</h3>
-        </div>
-        <div class="row d-flex justify-content-around">
-            <div class="col-1">
-                <div class="row">
+    <div class="container text-center">
+        <h3>Antecedentes</h3>
+        <div class="row justify-content-center">
+            <div class="col-4 col-sm-2 col-md-2 col-lg-1">
+                <div class="form-group">
                     <label for="character-combate">Combate: </label>
-                    <input type="number" id="character-combate">
+                    <input type="number" class="form-control" id="character-combate" name="character-combate">
                 </div>
-                <div class="row">
-                    <label for="character-neg">Negócios: </label>
-                    <input type="number" id="character-neg">
+                <div class="form-group">
+                    <label for="character-negocios">Negócios: </label>
+                    <input type="number" class="form-control" id="character-negocios" name="character-negocios">
                 </div>
-                <div class="row">
+                <div class="form-group">
                     <label for="character-montaria">Montaria: </label>
-                    <input type="number" id="character-montaria">
+                    <input type="number" class="form-control" id="character-montaria" name="character-montaria">
                 </div>
-                <div class="row">
-                    <label for="character-trad">Tradição: </label>
-                    <input type="number" id="character-trad">
+                <div class="form-group">
+                    <label for="character-tradicao">Tradição: </label>
+                    <input type="number" class="form-control" id="character-tradicao" name="character-tradicao">
                 </div>
             </div>
-            <div class="col-1">
-                <div class="row">
-                    <label for="character-expl">Exploração: </label>
-                    <input type="number" id="character-expl">
+            <div class="col-4 col-sm-2 col-md-2 col-lg-1">
+                <div class="form-group">
+                    <label for="character-exploracao">Exploração: </label>
+                    <input type="number" class="form-control" id="character-exploracao" name="character-exploracao">
                 </div>
-                <div class="row">
+                <div class="form-group">
                     <label for="character-roubo">Roubo: </label>
-                    <input type="number" id="character-roubo">
+                    <input type="number" class="form-control" id="character-roubo" name="character-roubo">
                 </div>
-                <div class="row">
-                    <label for="character-med">Medicina: </label>
-                    <input type="number" id="character-med">
+                <div class="form-group">
+                    <label for="character-medicina">Medicina: </label>
+                    <input type="number" class="form-control" id="character-medicina" name="character-medicina">
                 </div>
-                <div class="row">
+                <div class="form-group">
                     <label for="character-labuta">Labuta: </label>
-                    <input type="number" id="character-labuta">
+                    <input type="number" class="form-control" id="character-labuta" name="character-labuta">
                 </div>
             </div>
         </div>
-    </div>
-    <div class="row d-flex justify-content-center p-3">
-        <div class="col-1">
-            <label for="character-recompensa">Recompensa: </label>
-            <input type="number" id="character-recompensa">
+        <div class="row justify-content-center">
+            <div class="col-4 col-sm-2 col-md-2 col-lg-1">
+                <div class="form-group ">
+                    <label for="character-recompensa">Recompensa: </label>
+                    <input type="number" class="form-control" id="character-recompensa" name="character-recompensa">
+                </div>
+            </div>
         </div>
-    </div>
-    <div class="row d-flex justify-content-center p-3">
-        <label for="character-hab-1">Habilidade 1: </label>
-        <select id="character-hab-1">
-        </select>
-    </div>
-    <div class="row d-flex justify-content-center p-3">
-        <label for="character-hab-2">Habilidade 2: </label>
-        <select id="character-hab-2"></select>
+
+        <h3>Habilidades</h3>
+        <div class="row">
+            <div class="col vertical-scroll form-group" id="habilidades">
+                <!-- Preenchido pelo /public/create.js -->
+            </div>
+        </div>
     </div>
 
-    <div
-        class="row d-flex flex-row pt-2 mx-auto justify-content button-navigator justify-content-center">
-        <button onclick="handleBackSection()">Anterior</button>
-        <button onclick="handleNextSection()">Próximo</button>
+    <div class="row text-center">
+        <div class="col-6">
+            <button type="button" class="btn btn-light" onclick="handleBackSection()">Anterior</button>
+        </div>
+        <div class="col-6">
+            <button type="button" class="btn btn-dark" onclick="handleNextSection()">Próximo</button>
+        </div>
     </div>
 </div>
