@@ -1,12 +1,52 @@
 <div class="tab-pane invisible" id="section5" role="tabpanel">
-    <h1>TAB 5</h1>
 
-    <div class="row text-center">
-            <div class="col-6">
-                <button type="button" class="btn btn-light" onclick="handleBackSection()">Anterior</button>
-            </div>
-            <div class="col-6">
-                <button type="button" class="btn btn-dark" onclick="handleNextSection()">Próximo</button>
+    <div class="containter text-center">
+        <h3>Cavalo</h3>
+        <div class="row justify-content-center">
+            <div class="col-12 col-sm-8">
+                <div class="form-group">
+                    <label for="character-cavalo-name">Nome:</label>
+                    <input type="text" class="form-control" id="character-cavalo-name" name="character-cavalo-name">
+                </div>
             </div>
         </div>
+        <div class="row justify-content-center">
+            <div class="col-4 col-sm-2 col-md-2 col-lg-1">
+                <div class="form-group">
+                    <label for="character-cavalo-fidelidade">Fidelidade:</label>
+                    <input type="number" class="form-control" id="character-cavalo-fidelidade"
+                        name="character-cavalo-fidelidade">
+                </div>
+                <div class="form-group">
+                    <label for="character-cavalo-potencia">Potência:</label>
+                    <input type="number" class="form-control" id="character-cavalo-potencia"
+                        name="character-cavalo-potencia">
+                </div>
+                <div class="form-group">
+                    <label for="character-cavalo-vigor">Vigor:</label>
+                    <input type="number" class="form-control" id="character-cavalo-vigor" name="character-cavalo-vigor">
+                </div>
+            </div>
+            <div class="col-9 col-sm-6">
+                <h3>Itens no cavalo</h3>
+                <div class="container">
+                    <div class="form-group vertical-scroll">
+                        <% for( let i=0; i < 10; i++ ) { %>
+                            <input type="text" class="form-control" id="<%-`item-cavalo-${i}`%>"
+                                name="<%-`item-cavalo-${i}`%>">
+                            <% } %>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row text-center">
+        <div class="col-6">
+            <button type="button" class="btn btn-light" onclick="handleBackSection()">Anterior</button>
+        </div>
+        <div class="col-6">
+            <button type="button" class="btn btn-dark" onclick="handleNextSection()">Próximo</button>
+        </div>
+    </div>
 </div>
