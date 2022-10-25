@@ -1,9 +1,42 @@
-<div class="container">
-	<div class="row">
-		<div class="col">
-			<img src="<%=" /public/" + ((typeof personagem.icon==="undefined" || !personagem.icon)
-				? "svg/character-icon-template.svg" : "img/" + personagem.icon) %>" alt="<%- personagem.name %> ">
-				
+<div class="page">
+	<div class="container text-center">
+		<div class="row">
+			<div class="col-3">
+				<img src="<%=" /public/" + ((typeof personagem.icon==="undefined" || !personagem.icon)
+					? "svg/character-icon-template.svg" : "img/" + personagem.icon) %>" alt="<%- personagem.name %> ">
+
+			</div>
+			<div class="col-6">
+				<div class="container text-center">
+					<h3>Atributos</h3>
+					<div class="row">
+						<div class="col-6">
+							<div>FIS: <%- personagem.atributos.fisico %>
+							</div>
+							<div>INT: <%- personagem.atributos.inteligencia %>
+							</div>
+						</div>
+						<div class="col-6">
+							<div>AGI: <%- personagem.atributos.agilidade %>
+							</div>
+							<div>COR: <%- personagem.atributos.coragem %>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="col-3">
+				<h2>Tormento</h2>
+				<div>
+					<%- personagem.tormento.main %>
+				</div>
+				<div>
+					<%- personagem.tormento.sub %>
+				</div>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-3">
 				<p>
 					<%- personagem.name %>
 				</p>
@@ -13,200 +46,198 @@
 				<p>
 					EXP: <%- personagem.exp %>
 				</p>
+			</div>
+			<div class="col-6 container">
+				<div class="row">
+					<div class="col">
+						<div>PV: <%- personagem.atributos.fisico %>
+						</div>
+						<div>DEF: <%- personagem.atributos.inteligencia %>
+						</div>
+					</div>
+					<div class="col">
+						<div>Ações: <%- personagem.atributos.agilidade %>
+						</div>
+						<div>INI: <%- personagem.atributos.coragem %>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="col-3"></div>
 		</div>
-		<div class="col">
-			<h2>Tormento</h2>
-			<div>
-				<%- personagem.tormento.main %>
-			</div>
-			<div>
-				<%- personagem.tormento.sub %>
-			</div>
-		</div>
-		<div class="col">
-			<h3>Atributos</h3>
-			<div class="row">
-				<div class="col">
-					<div>FIS: <%- personagem.atributos.fisico %>
+		<div class="row">
+			<div class="container col-6 offset-3">
+				<h2>Antecedentes: <%- personagem.antecedentesPontos %>
+				</h2>
+				<div class="row">
+					<div class="col">
+						<div>
+							COMB: <%- personagem.antecedentes.combate %>
+						</div>
+						<div>
+							NEG: <%- personagem.antecedentes.negocio %>
+						</div>
+						<div>
+							MONT: <%- personagem.antecedentes.montaria %>
+						</div>
+						<div>
+							TRAD: <%- personagem.antecedentes.tradicao %>
+						</div>
 					</div>
-					<div>INT: <%- personagem.atributos.inteligencia %>
-					</div>
-				</div>
-				<div class="col">
-					<div>AGI: <%- personagem.atributos.agilidade %>
-					</div>
-					<div>COR: <%- personagem.atributos.coragem %>
-					</div>
-				</div>
-			</div>
-			<div class="row">
-				<div class="col">
-					<div>PV: <%- personagem.atributos.fisico %>
-					</div>
-					<div>DEF: <%- personagem.atributos.inteligencia %>
-					</div>
-				</div>
-				<div class="col">
-					<div>Ações: <%- personagem.atributos.agilidade %>
-					</div>
-					<div>INI: <%- personagem.atributos.coragem %>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-	<div class="row">
-		<div class="col">
-			<h2>Antecedentes: <%- personagem.antecedentesPontos %>
-			</h2>
-			<div class="row">
-				<div class="col">
-					<div>
-						COMB: <%- personagem.antecedentes.combate %>
-					</div>
-					<div>
-						NEG: <%- personagem.antecedentes.negocio %>
-					</div>
-					<div>
-						MONT: <%- personagem.antecedentes.montaria %>
-					</div>
-					<div>
-						TRAD: <%- personagem.antecedentes.tradicao %>
-					</div>
-				</div>
-				<div class="col">
-					<div>
-						LAB: <%- personagem.antecedentes.labuta %>
-					</div>
-					<div>
-						EXPL: <%- personagem.antecedentes.exploracao %>
-					</div>
-					<div>
-						ROUBO: <%- personagem.antecedentes.roubo %>
-					</div>
-					<div>
-						MED: <%- personagem.antecedentes.medicina %>
+					<div class="col">
+						<div>
+							LAB: <%- personagem.antecedentes.labuta %>
+						</div>
+						<div>
+							EXPL: <%- personagem.antecedentes.exploracao %>
+						</div>
+						<div>
+							ROUBO: <%- personagem.antecedentes.roubo %>
+						</div>
+						<div>
+							MED: <%- personagem.antecedentes.medicina %>
+						</div>
 					</div>
 				</div>
 			</div>
 		</div>
-	</div>
-	<div class="row">
-		<div class="col">
-			<h3>Habilidades</h3>
-			<div class="row vertical-scroll">
-				<div class="col">
+		<div class="row">
+			<div class="col-6">
+				<h3>Habilidades</h3>
+				<div class="container vertical-scroll">
 					<div class="row">
-						<div>Nome</div>
-						<div>Descrição</div>
+						<div class="col-4">
+							<div>Ativa?</div>
+						</div>
+						<div class="col-4">
+							<div>Nome</div>
+						</div>
+						<div class="col-4">
+							<div>Descrição</div>
+						</div>
 					</div>
-					
 					<% for( let i=0; i < personagem.habilidades.length; i++ ) { %>
 						<div class="row">
-							<div>
+							<div class="col-4">
 								<%- personagem.habilidades[i].ativa %>
 							</div>
-							<div>
+							<div class="col-4">
 								<%- personagem.habilidades[i].nome %>
 							</div>
-							<div>
+							<div class="col-4">
 								<%- personagem.habilidades[i].descricao %>
 							</div>
 						</div>
 						<% } %>
 				</div>
 			</div>
-		</div>
-		<div class="col"></div>
-	</div>
-	<div class="row">
-		<div class="col">
-			<h3>Equipamentos</h3>
-			<div class="row vertical-scroll">
-				<div class="col">
+			<div class="col-6">
+				<h3>Equipamentos</h3>
+				<div class="container vertical-scroll">
 					<div class="row">
-						<div class="col">
-							<div class="row">
-								<div>Nome</div>
-								<div>Dano</div>
-							</div>
-							<% for( let i=0; i < personagem.equipamentos.length; i++ ) { %>
-								<div class="row">
-									<div>
-										<%- personagem.equipamentos[i].nome %>
-									</div>
-									<div>
-										<%- personagem.equipamentos[i].dano %>
-									</div>
-								</div>
-								<% } %>
+						<div class="col-9">
+							<div>Nome</div>
+						</div>
+						<div class="col-3">
+							<div>Dano</div>
 						</div>
 					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-</div>
-<div class="container">
-	<h2>Cavalo</h2>
-	<div class="row">
-		<div class="col">
-			<div>Nome: <%- personagem.cavalo.nome %>
-			</div>
-			<div class="col">
-				<h3>Fidelidade: <%- personagem.cavalo.atributos.fidelidade %>
-				</h3>
-				<div class="row">
-					<input type="checkbox" id="fidelidade-0">
-					<label for="fidelidade-0">Dê um nome ao cavalo</label>
-				</div>
-				<div class="row">
-					<input type="checkbox" id="fidelidade-1">
-					<label for="fidelidade-1">+1 de potência</label>
-				</div>
-				<div class="row">
-					<input type="checkbox" id="fidelidade-2">
-					<label for="fidelidade-2">
-						Pode ser chamado com um assovio e não
-						deixa ser montado por outros
-					</label>
-				</div>
-				<div class="row">
-					<input type="checkbox" id="fidelidade-3">
-					<label for="fidelidade-3">+2 potência</label>
-				</div>
-			</div>
-		</div>
-		<div class="col">
-			<div class="col">
-				<div class="row">
-					<div>
-						PV: <%- personagem.cavalo.hp %>
-					</div>
-					<div>
-						Dano: <%- personagem.cavalo.dano %>
-					</div>
-					<div>
-						DEF: <%- personagem.cavalo.defesa %>
-					</div>
-				</div>
-				<div class="row">
-					<div>
-						Potência: <%- personagem.cavalo.atributos.potencia %>
-					</div>
-					<div>
-						Vigor / Resistência: <%- personagem.cavalo.atributos.vigor %>
-					</div>
-				</div>
-			</div>
-			<div class="col">
-				<h3>Itens cavalo</h3>
-				<div class="vertical-scroll">
-					<% for( let i=0; i < personagem.cavalo.itens.length; i++ ) { %>
-						<div>
-							<%- personagem.cavalo.itens[i].nome %>
+					<% for( let i=0; i < personagem.equipamentos.length; i++ ) { %>
+						<div class="row">
+							<div class="col-9">
+								<%- personagem.equipamentos[i].nome %>
+							</div>
+							<div class="col-3">
+								<%- personagem.equipamentos[i].dano %>
+							</div>
 						</div>
 						<% } %>
+				</div>
+			</div>
+		</div>
+
+		<h2>Cavalo</h2>
+		<div class="row">
+			<div class="container">
+				<div class="row">
+					<div class="col-6">
+						<p>
+							Nome: <%- personagem.cavalo.nome %>
+						</p>
+						<div class="container text-center">
+							<h4>
+								Fidelidade: <%- personagem.cavalo.atributos.fidelidade %>
+							</h4>
+							<div class="row">
+								<div class="col-3">
+									<input type="checkbox" id="fidelidade-0">
+								</div>
+								<div class="col-9">
+									<label for="fidelidade-0">Dê um nome ao cavalo</label>
+								</div>
+							</div>
+							<div class="row">
+								<div class="col-3">
+									<input type="checkbox" id="fidelidade-1">
+								</div>
+								<div class="col-9">
+									<label for="fidelidade-1">+1 de potência</label>
+								</div>
+							</div>
+							<div class="row">
+								<div class="col-3">
+									<input type="checkbox" id="fidelidade-2">
+								</div>
+								<div class="col-9">
+									<label for="fidelidade-2">
+										Pode ser chamado com um assovio e não
+										deixa ser montado por outros
+									</label>
+								</div>
+							</div>
+							<div class="row">
+								<div class="col-3">
+									<input type="checkbox" id="fidelidade-3">
+								</div>
+								<div class="col-9">
+									<label for="fidelidade-3">+2 potência</label>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="col-6">
+						<div class="container">
+							<div class="row justify-content-around">
+								<p>
+									PV: <%- personagem.cavalo.hp %>
+								</p>
+								<p>
+									Dano: <%- personagem.cavalo.dano %>
+								</p>
+								<p>
+									DEF: <%- personagem.cavalo.def %>
+								</p>
+							</div>
+							<div class="row justify-content-around">
+								<div>
+									Potência: <%- personagem.cavalo.atributos.potencia %>
+								</div>
+								<div>
+									Vigor / Resistência: <%- personagem.cavalo.atributos.vigor %>
+								</div>
+							</div>
+						</div>
+						<div class="container">
+							<h3>Itens cavalo</h3>
+							<div class="vertical-scroll">
+								<% for( let i=0; i < personagem.cavalo.itens.length; i++ ) { %>
+									<div class="row">
+										<%- personagem.cavalo.itens[i].nome %>
+									</div>
+									<% } %>
+							</div>
+						</div>
+					</div>
 				</div>
 			</div>
 		</div>
