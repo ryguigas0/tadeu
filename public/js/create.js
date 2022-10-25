@@ -112,8 +112,7 @@ function handleBackSection() {
 
 function setHabilidades() {
 
-    const hab1 = document.querySelector("#character-hab-1")
-    const hab2 = document.querySelector("#character-hab-2")
+    const habilidadesDiv = document.querySelector("#habilidades")
 
     const habilidades = new Array(24).fill({
         nome: "Carry on my wayward son",
@@ -123,11 +122,13 @@ function setHabilidades() {
         return val
     })
 
-    habilidades.forEach((val, i, arr) => {
-        hab1.innerHTML += `<option value="${i}">${val.nome} ${val.descricao}</option>`
-    })
-
-    habilidades.forEach((val, i, arr) => {
-        hab2.innerHTML += `<option value="${i}">${val.nome} ${val.descricao}</option>`
+    habilidades.forEach((hab, i, arr) => {
+        habilidadesDiv.innerHTML += `
+        <input type="checkbox" class="form-control" id="character-habilidade-${i}" name="character-habilidade-${i}"/>
+        <label for="character-habilidade-${i}">
+            <div>${hab.nome}</div>
+            <div>${hab.descricao}</div>
+        </label>
+        `
     })
 }
