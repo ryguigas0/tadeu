@@ -1,7 +1,72 @@
-export default {
+type Personagem = {
+    id?: number;
+    name: string;
+    icon: string;
+    level: number;
+    exp: number;
+    tormento: {
+        main: string;
+        sub: string;
+    };
+    atributos: {
+        fisico: number,
+        agilidade: number,
+        inteligencia: number,
+        coragem: number
+    },
+    pv: number,
+    def: number,
+    iniciativa: number,
+    acoes: number,
+    antecedentesPontos: number,
+    antecedentes: {
+        combate: number,
+        labuta: number,
+        negocios: number,
+        montaria: number,
+        tradicao: number,
+        exploracao: number,
+        roubo: number,
+        medicina: number,
+    },
+    habilidades: Habilidade[],
+    recompensa: number,
+    dinheiro: number,
+    equipamentos: ItemPersonagem[],
+    cavalo?: Cavalo
+}
 
-    personagens: new Array(10).fill({
-        id: 1,
+type Habilidade = {
+    ativa: boolean,
+    nome: string,
+    descricao: string
+}
+
+type ItemPersonagem = {
+    nome: string,
+    dano: string
+}
+
+type Cavalo = {
+    nome: string,
+    pv: number,
+    dano: number,
+    def: number,
+    atributos: {
+        fidelidade: number,
+        potencia: number,
+        vigor: number
+    },
+    itens: ItemCavalo[]
+}
+
+type ItemCavalo = {
+    nome: string
+}
+
+let listaPersonagens: Personagem[] = new Array(5).fill(1).map((v, i, arr) => {
+    let personagem: Personagem = {
+        id: i,
         name: "Cleide Belinha",
         icon: "cleide_belinha.jpeg",
         level: 1,
@@ -16,7 +81,7 @@ export default {
             inteligencia: 1,
             coragem: 1
         },
-        hp: 11,
+        pv: 11,
         def: 5,
         iniciativa: 2,
         acoes: 2,
@@ -24,7 +89,7 @@ export default {
         antecedentes: {
             combate: 1,
             labuta: 1,
-            negocio: 1,
+            negocios: 1,
             montaria: 1,
             tradicao: 1,
             exploracao: 1,
@@ -199,7 +264,7 @@ export default {
         ],
         cavalo: {
             nome: "Não Binare",
-            hp: 20,
+            pv: 20,
             dano: 6,
             def: 5,
             atributos: {
@@ -255,15 +320,41 @@ export default {
                 }
             ]
         }
-    }),
 
-    // personagens: [],
+    }
 
-    getPersonagens() {
+    return personagem
+})
+
+
+export { Personagem, Habilidade, ItemPersonagem, Cavalo, ItemCavalo };
+
+export default {
+
+    personagens: listaPersonagens,
+
+    currId: listaPersonagens.length - 1,
+
+    getPersonagens(): Personagem[] {
         return this.personagens
     },
 
-    getPersonagem(id: number) {
+    getPersonagem(id: number): Personagem {
         return this.personagens[id]
+    },
+
+    insertPersonagem(personagem: Personagem): number {
+        this.currId++
+
+        personagem.id = this.currId;
+
+        this.personagens.push(personagem)
+
+        return this.currId
+    },
+
+    updatePersonagem(id: number, dados: Personagem): void {
+        this.personagens[id] = dados;
     }
 }
+
