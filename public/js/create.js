@@ -1,4 +1,4 @@
-const tormentoSelect = document.querySelector("#tormento")
+const tormentoSelect = document.querySelector("#character-tormento")
 
 if (tormentoSelect) {
     updateSubtormentos(tormentoSelect)
@@ -12,7 +12,7 @@ const maxFormIndex = 5
 
 
 function updateSubtormentos(tormentoSelect) {
-    const subtormentoSelect = document.getElementById("subtormento")
+    const subtormentoSelect = document.getElementById("character-subtormento")
     const tormentoValue = Number.parseInt(tormentoSelect.value)
 
     subtormentoSelect.innerHTML = ""
