@@ -1,5 +1,5 @@
 import app = require("teem");
-import db from "../sql/fakeDB";
+import Personagem from "../models/personagem";
 
 const nomeProjeto = "Tadeu"
 class CharactersRoute {
@@ -9,10 +9,10 @@ class CharactersRoute {
 
         if (!characterId) {
             res.render("characters/index", {
-                titulo: nomeProjeto, personagens: db.getPersonagens()
+                titulo: nomeProjeto, personagens: await Personagem.getPersonagens()
             })
         } else {
-            const personagem = db.getPersonagem(Number.parseInt(characterId))
+            const personagem = await Personagem.getPersonagem(Number.parseInt(characterId))
 
             res.render("characters/character", {
                 titulo: nomeProjeto, personagem: personagem

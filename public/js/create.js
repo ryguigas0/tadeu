@@ -1,67 +1,8 @@
-const tormentoSelect = document.querySelector("#character-tormento")
-
-if (tormentoSelect) {
-    updateSubtormentos(tormentoSelect)
-}
-
 setHabilidades()
 
 let currFormIndex = 1
 
 const maxFormIndex = 5
-
-
-function updateSubtormentos(tormentoSelect) {
-    const subtormentoSelect = document.getElementById("character-subtormento")
-    const tormentoValue = Number.parseInt(tormentoSelect.value)
-
-    subtormentoSelect.innerHTML = ""
-
-    let subtormentoList = []
-
-    switch (tormentoValue) {
-        case 1:
-            subtormentoList = [
-                "de uma família poderosa.",
-                "de uma família poderosa.",
-                "de uma família poderosa.",
-                "de uma família poderosa.",
-                "de uma família poderosa.",
-                "de uma família poderosa."
-            ]
-            break;
-
-        case 2:
-            subtormentoList = new Array(6).fill("pelos meus filhos")
-
-            break;
-        case 3:
-            subtormentoList = new Array(6).fill("por minha terra roubada")
-
-            break;
-        case 4:
-            subtormentoList = new Array(6).fill("pela morte de um parceiro")
-            break;
-
-        case 5:
-            subtormentoList = new Array(6).fill("pela minha tribo")
-
-            break;
-
-        case 6:
-            subtormentoList = new Array(6).fill("pelo fim da minha gangue")
-            break;
-
-        default:
-            subtormentoList = []
-            break;
-    }
-
-
-    subtormentoList.forEach((subtormento, index) => {
-        subtormentoSelect.innerHTML += `<option value="${tormentoValue}-${index + 1}">${subtormento}</option>`
-    })
-}
 
 function handleNextSection() {
     const beforeTabIndex = currFormIndex;
@@ -106,29 +47,131 @@ function handleBackSection() {
     nextSection.classList.add("show", "active")
     nextSection.classList.remove("invisible")
 
-
-
 }
 
 function setHabilidades() {
 
     const habilidadesDiv = document.querySelector("#habilidades")
 
-    const habilidades = new Array(24).fill({
-        nome: "Carry on my wayward son",
-        descricao: "Inspirações e bônus para outros personagens"
-    }).map((val, i, arr) => {
-        val["index"] = i
-        return val
+    const habilidades = new Array(24).fill(0).map((val, i, arr) => {
+        let nome = ""
+        let descr = ""
+        switch (i) {
+            case 0:
+                nome = "Light my fire";
+                descr = "+1 para testes com revólver";
+                break;
+            case 1:
+                nome = "LETS DANCE";
+                descr = "2 tiros por ação com - 1 nos testes.";
+                break;
+            case 2:
+                nome = "FORTUNATE SON";
+                descr = "ao chegar a ZERO retorne com 3 PVs.";
+                break;
+            case 3:
+                nome = "DONT STOP BELIEVING";
+                descr = "+ 1 para testes com rifles ou arcos longos.";
+                break;
+            case 4:
+                nome = "IMMIGRANT SONG";
+                descr = "+ 1 ponto de Antecedente.";
+                break;
+            case 5:
+                nome = "GIMME SHELTER";
+                descr = "dano extra para ataques surpresa com facas.";
+                break;
+            case 6:
+                nome = "ANOTHER ONE BITES THE DUST";
+                descr = "manobras de combate corpo a corpo.";
+                break;
+            case 7:
+                nome = "RIDERS ON THE STORM";
+                descr = "+ 1d6 no dano para cada 3 PVs perdidos.";
+                break;
+            case 8:
+                nome = "BORN TO BE WILD";
+                descr = "+ 1 para testes de furtividade ou percepção.";
+                break;
+            case 9:
+                nome = "SMOKE ON THE WATER";
+                descr = "+ 1 em testes com armas rústicas + 1 dano / Físico.";
+                break;
+            case 10:
+                nome = "UNDER PRESSURE";
+                descr = "+ 1 para testes de Atributo.";
+                break;
+            case 11:
+                nome = "HEARTBREAKER";
+                descr = "- 1 para ações contra 1 alvo à escolha.";
+                break;
+            case 12:
+                nome = "BARRACUDA";
+                descr = "+ 1 em testes para obter informações.";
+                break;
+            case 13:
+                nome = "SWEET EMOTION";
+                descr = "inspirações e bônus para outros personagens.";
+                break;
+            case 14:
+                nome = "CRAZY TRAIN";
+                descr = "+ 1d6 no dano da arma até o fim do combate.";
+                break;
+            case 15:
+                nome = "CARRY ON MY WAYWARD SON";
+                descr = "personagem pode refazer um teste falho.";
+                break;
+            case 16:
+                nome = "WAR PIGS";
+                descr = "+ 1 para testes que envolvem explosivos.";
+                break;
+            case 17:
+                nome = "ACE OF SPADES";
+                descr = "+ 1 para testes em jogos e trapaças.";
+                break;
+            case 18:
+                nome = "A HORSE WITH NO NAME";
+                descr = "+ 1 para testes com montaria.";
+                break;
+            case 19:
+                nome = "I WANT TO HOLD YOUR HAND";
+                descr = "+ 1d6 PVs curados durante o descanso.";
+                break;
+            case 20:
+                nome = "PARANOID";
+                descr = "+ 1 nos testes de Iniciativa.";
+                break;
+            case 21:
+                nome = "RAMBLE ON";
+                descr = "2 movimentos com 1 ação / +1 em testes de fuga.";
+                break;
+            case 22:
+                nome = "AQUALUNG";
+                descr = "+ 1 para testes atléticos.";
+                break;
+            case 23:
+                nome = "MORE THAN A FEELING";
+                descr = "a personagem pode fazer 2 perguntas à Juíza.";
+                break;
+        }
+        return {
+            nome: nome,
+            descricao: descr
+        }
     })
 
     habilidades.forEach((hab, i, arr) => {
         habilidadesDiv.innerHTML += `
-        <input type="checkbox" class="form-control" id="character-habilidade-${i}" name="character-habilidade-${i}"/>
-        <label for="character-habilidade-${i}">
-            <div>${hab.nome}</div>
-            <div>${hab.descricao}</div>
-        </label>
-        `
+        <div class="row">
+                <div class="col-4">
+                    <input type="checkbox" class="form-check-input" id="character-habilidade-${i}" name="character-habilidades" value="${i}"/>
+                </div>
+                <div class="col-8">
+                    <label class="form-check-label" for="character-habilidade-${i}">
+                        <div>${hab.nome}</div>
+                        <div>${hab.descricao}</div>
+                    </label>
+                </div>
+        </div>`
     })
 }
