@@ -1,20 +1,17 @@
 {
-    // Use IntelliSense to learn about possible attributes.
-    // Hover to view descriptions of existing attributes.
-    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
     "version": "0.2.0",
     "configurations": [
         {
             "type": "node",
+            "name": "Launch prod server",
             "request": "launch",
-            "name": "Launch Program",
-            "skipFiles": [
-                "<node_internals>/**"
+            // "command": "npm run prod",
+            "runtimeExecutable": "npm",
+            "args": [
+                "run",
+                "prod"
             ],
-            "program": "${workspaceFolder}/src/app.js",
-            "outFiles": [
-                "${workspaceFolder}/src/**/*.js"
-            ]
+            "cwd": "${workspaceFolder}"
         }
     ]
 }
