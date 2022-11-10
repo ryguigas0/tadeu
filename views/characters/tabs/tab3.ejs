@@ -1,5 +1,5 @@
-<div class="tab-pane invisible" id="section3" role="tabpanel">
-    <div class="container text-center">
+<form class="tab-pane invisible" id="section3" role="tabpanel">
+    <div class="container-fluid text-center">
         <h3>Antecedentes</h3>
         <div class="row justify-content-center">
             <div class="col-4 col-sm-2 col-md-2 col-lg-1">
@@ -49,21 +49,59 @@
         </div>
 
         <h3>Habilidades</h3>
-        <div class="container form-check vertical-scroll" id="habilidades">
+        <div class="container-fluid form-check vertical-scroll" id="habilidades">
             <div class="row">
                 <div class="col-4">Ativa</div>
                 <div class="col-8">Habilidade</div>
             </div>
             <!-- Preenchido pelo /public/create.js -->
         </div>
+        <div class="row text-center">
+            <div class="col-6">
+                <button type="button" class="btn btn-light" onclick="handleBackSection(2)">Anterior</button>
+            </div>
+            <div class="col-6">
+                <button type="submit" class="btn btn-dark">Próximo</button>
+            </div>
+        </div>
     </div>
 
-    <div class="row text-center">
-        <div class="col-6">
-            <button type="button" class="btn btn-light" onclick="handleBackSection()">Anterior</button>
-        </div>
-        <div class="col-6">
-            <button type="button" class="btn btn-dark" onclick="handleNextSection()">Próximo</button>
-        </div>
-    </div>
-</div>
+</form>
+
+<script>
+    $("#section3").validate({
+        rules: {
+            "character-combate": {
+                required: true
+            },
+            "character-negocios": {
+                required: true
+            },
+            "character-montaria": {
+                required: true
+            },
+            "character-tradicao": {
+                required: true
+            },
+            "character-roubo": {
+                required: true
+            },
+            "character-exploracao": {
+                required: true
+            },
+            "character-medicina": {
+                required: true
+            },
+            "character-labuta": {
+                required: true
+            },
+            "character-recompensa": {
+                required: true
+            }
+        },
+
+        submitHandler: function (form) {
+            handleNextSection(4);
+        }
+    });
+</script>

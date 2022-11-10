@@ -1,3 +1,4 @@
+import app = require("teem");
 import Cavalo from "./cavalo";
 import Habilidade from "./habilidade";
 import ItemPersonagem from "./itemPersonagem";
@@ -287,12 +288,14 @@ class Personagem {
 		return Promise.resolve(Personagem.personagens[id]);
 	}
 
-	public static insertPersonagem(personagem: Personagem): Promise<number> {
+	public static insertPersonagem(personagem: Personagem, characterImage: app.UploadedFile): Promise<number> {
 		Personagem.currId++;
 
 		personagem.id = this.currId;
 
 		Personagem.personagens.push(personagem);
+
+        // await app.fileSystem.saveUploadedFile("public/img/characters/<id da ficha>.jpg", characterImage);
 
 		return Promise.resolve(this.currId);
 	}

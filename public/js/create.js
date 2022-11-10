@@ -1,52 +1,86 @@
 setHabilidades()
 
-let currFormIndex = 1
-
-const maxFormIndex = 5
-
-function handleNextSection() {
-    const beforeTabIndex = currFormIndex;
-    currFormIndex += 1;
-
-    if (currFormIndex > maxFormIndex) {
-        window.location.href = "/characters/1"
-        return
-    }
-
+function handleNextSection(nextIndex) {
+    const beforeTabIndex = nextIndex - 1;
 
     const beforeSection = document.querySelector(`#section${beforeTabIndex}`)
 
-    beforeSection.classList.remove("show", "active")
-    beforeSection.classList.add("invisible")
+    hideSection(beforeSection)
 
-    const nextSection = document.querySelector(`#section${currFormIndex}`)
+    const nextSection = document.querySelector(`#section${nextIndex}`)
 
-    nextSection.classList.add("show", "active")
-    nextSection.classList.remove("invisible")
-
-
+    showSection(nextSection)
 
 }
 
-function handleBackSection() {
-    const beforeTabIndex = currFormIndex;
-    currFormIndex -= 1;
+function handleBackSection(nextIndex) {
+    const beforeTabIndex = nextIndex + 1;
 
-    if (currFormIndex <= 0) {
-        window.location.href = "/characters"
+    if (nextIndex <= 0) {
+        window.location.href = "./characters"
         return
     }
 
     let beforeSection = document.querySelector(`#section${beforeTabIndex}`)
 
-    beforeSection.classList.remove("show", "active")
-    beforeSection.classList.add("invisible")
+    hideSection(beforeSection)
 
-    let nextSection = document.querySelector(`#section${currFormIndex}`)
+    let nextSection = document.querySelector(`#section${nextIndex}`)
 
-    nextSection.classList.add("show", "active")
-    nextSection.classList.remove("invisible")
+    showSection(nextSection)
 
+}
+
+function showSection(section) {
+    section.classList.add("show", "active")
+    section.classList.remove("invisible")
+}
+
+function hideSection(section) {
+    section.classList.remove("show", "active")
+    section.classList.add("invisible")
+}
+
+let processando = false;
+
+async function enviarForm() {
+    if (processando) {
+        alert("Criando personagem, aguarde!")
+        return;
+    }
+
+    let formData = new FormData(document.getElementById("section1"));
+    for (let i = 2; i <= 5; i++) {
+        let temp = new FormData(document.getElementById("section" + i));
+        for (let par of temp.entries()) {
+            formData.append(par[0], par[1]);
+        }
+    }
+
+    try {
+        const opcoes = {
+            method: "post",
+            body: formData
+        };
+
+        processando = true;
+        const response = await fetch("/create/criarPersonagem", opcoes);
+        processando = false;
+
+        if (response.ok) {
+            let json = await response.json()
+            window.location.href = `/characters/${json.newCharacterId}`
+        } else {
+            alert("Erro criando personagem")
+        }
+
+        return
+
+        // OK!
+    } catch (ex) {
+        processando = false;
+        /// ...
+    }
 }
 
 function setHabilidades() {

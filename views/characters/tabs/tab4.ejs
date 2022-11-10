@@ -1,5 +1,5 @@
-<div class="tab-pane invisible" id="section4" role="tabpanel">
-    <div class="container">
+<form class="tab-pane invisible" id="section4" role="tabpanel">
+    <div class="container-fluid">
         <div class="row">
             <div class="col-9">
                 <h2>Equipamentos</h2>
@@ -34,14 +34,32 @@
                 </div>
             </div>
         </div>
+        <div class="row text-center">
+            <div class="col-6">
+                <button type="button" class="btn btn-light" onclick="handleBackSection(3)">Anterior</button>
+            </div>
+            <div class="col-6">
+                <button type="submit" class="btn btn-dark">Próximo</button>
+            </div>
+        </div>
     </div>
 
-    <div class="row text-center">
-        <div class="col-6">
-            <button type="button" class="btn btn-light" onclick="handleBackSection()">Anterior</button>
-        </div>
-        <div class="col-6">
-            <button id="early-finish" type="button" class="btn btn-dark" onclick="handleNextSection()">Próximo</button>
-        </div>
-    </div>
-</div>
+</form>
+
+<script>
+    $("#section4").validate({
+        rules: {
+            "character-dinheiro": {
+                required: true
+            },
+        },
+        submitHandler:
+            form => {
+                if ($("#character-has-horse").prop("checked")) {
+                    handleNextSection(5);
+                } else {
+                    enviarForm()
+                }
+            }
+    });
+</script>
