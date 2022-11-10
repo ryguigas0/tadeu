@@ -1,6 +1,5 @@
-
 body {
-    background-image: url('/public/img/fundo-cavalo.png');
+    background-image: url('../img/fundo-cavalo.png');
     background-size: cover;
     background-position: center;
 }
@@ -12,7 +11,7 @@ body {
 }
 
 .create-character {
-    background-image: url("/public/img/fundo-pergaminho.png");
+    background-image: url("../img/fundo-pergaminho.png");
     background-repeat: no-repeat;
     background-size: cover;
 
