@@ -1,3 +1,3 @@
 function back() {
-    window.location.href = "/characters";
+    window.location.href = "../characters";
 }
