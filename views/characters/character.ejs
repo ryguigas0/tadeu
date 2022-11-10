@@ -8,8 +8,7 @@
 	</div>
 	<div class="row">
 		<div class="col-6">
-			<img src="<%=" /public/" + ((typeof personagem.icon==="undefined" || !personagem.icon)
-				? "svg/character-icon-template.svg" : "img/" + personagem.icon) %>" alt="<%- personagem.name %> ">
+			<img src="<%= root %>/public/img/characters/<%= (personagem.icon ? (personagem.id + ".jpg") : "usuario.png") %>">
 		</div>
 		<div class="col-6">
 			<h1>
