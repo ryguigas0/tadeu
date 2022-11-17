@@ -1,6 +1,6 @@
 {
-  "name": "projeto",
-  "version": "0.0.0",
+  "name": "tadeu",
+  "version": "1.0.0",
   "private": true,
   "scripts": {
     "prod": "tsc && node ."
