@@ -295,33 +295,28 @@ class Personagem {
 		personagem: Personagem,
 		characterImage: app.UploadedFile
 	): Promise<number> {
-		// await app.sql.connect(async (sql) => {
-		// 	await sql.beginTransaction();
+		await app.sql.connect(async (sql) => {
+			await sql.beginTransaction();
 
-		// 	//await sql.query();
+			//await sql.query();
 
-		// 	await app.fileSystem.saveUploadedFile(
-		// 		`/public/img/characters/${this.currId}.jpg`,
-		// 		characterImage
-		// 	);
+			if (characterImage !== null) {
+				await app.fileSystem.saveUploadedFile(
+					`/public/img/characters/${this.currId}.jpg`,
+					characterImage
+				);
+			} else {
+				personagem.icon = false;
+			}
 
-		// 	await sql.commit();
-		// });
+			await sql.commit();
+		});
 
 		Personagem.currId++;
 
 		personagem.id = this.currId;
 
 		//TODO: Assistir aula 13 no canvas pra entender como faz isso
-
-		if (characterImage !== null) {
-			await app.fileSystem.saveUploadedFile(
-				`/public/img/characters/${this.currId}.jpg`,
-				characterImage
-			);
-		} else {
-			personagem.icon = false;
-		}
 
 		// Se tiver imagem, coloca o icon como true pra poder usar no render
 

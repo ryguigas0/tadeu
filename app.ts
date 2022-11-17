@@ -1,4 +1,6 @@
 ﻿import app = require("teem");
+import * as dotenv from 'dotenv' // see https://github.com/motdotla/dotenv#how-do-i-use-dotenv-with-import
+dotenv.config()
 
 app.run({
 	// Configurações de acesso ao banco de dados.
@@ -7,12 +9,12 @@ app.run({
 		connectionLimit: 30,
 		waitForConnections: true,
 		charset: "utf8mb4",
-		host: "localhost",
-		port: 3306,
-		user: "root",
-		password: "toor",
-		database: "agenda",
+		host: process.env.dbhost,
+		port: Number.parseInt(process.env.dbport),
+		user: process.env.dbuser,
+		password: process.env.dbpassword,
+		database: process.env.dbdatabase,
 	},
 	logRoutesToConsole: true,
-	port: 3000
+	port: 3000,
 });

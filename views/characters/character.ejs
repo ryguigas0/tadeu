@@ -8,8 +8,8 @@
 	</div>
 	<div class="row">
 		<div class="col-6">
-			<img src="<%= root %>/public/img/characters/<%= (personagem.icon ? (personagem.id + " .jpg")
-				: "default.png" ) %>"
+			<img src="<%= root %>/public/img/characters/<%= (personagem.icon ? (personagem.id + " .jpg") : "default.png"
+				) %>"
 			alt="<%- personagem.name %>" class="img-fluid">
 		</div>
 		<div class="col-6">
@@ -141,120 +141,123 @@
 			</div>
 		</div>
 	</div>
-	<div class="row">
-		<h2>Cavalo</h2>
-		<div class="container">
-			<div class="row">
-				<div class="col-6">
-					<p>
-						Nome: <%- personagem.cavalo.nome %>
-					</p>
+	<% if (personagem.cavalo.nome !== '') { %>
+		<div class="row">
+			<h2>Cavalo</h2>
+			<div class="container">
+				<div class="row">
+					<div class="col-6">
+						<p>
+							Nome: <%- personagem.cavalo.nome %>
+						</p>
+					</div>
 				</div>
-			</div>
-			<div class="row">
-				<div class="col-6">
-					<div class="container">
-						<div class="row justify-content-around">
-							<div class="col-3">
-								<p>
-									PV: <%- personagem.cavalo.pv %>
-								</p>
-							</div>
-							<div class="col-3">
-								<p>
-									Dano: <%- personagem.cavalo.dano %>
-								</p>
-							</div>
-							<div class="col-3">
-								<p>
-									DEF: <%- personagem.cavalo.def %>
-								</p>
-							</div>
-						</div>
-						<div class="row justify-content-around">
-							<div class="col-12">
-								<div>
-									Potência: <%- personagem.cavalo.atributos.potencia %>
+				<div class="row">
+					<div class="col-6">
+						<div class="container">
+							<div class="row justify-content-around">
+								<div class="col-3">
+									<p>
+										PV: <%- personagem.cavalo.pv %>
+									</p>
 								</div>
-								<div>
-									Vigor: <%- personagem.cavalo.atributos.vigor %>
+								<div class="col-3">
+									<p>
+										Dano: <%- personagem.cavalo.dano %>
+									</p>
+								</div>
+								<div class="col-3">
+									<p>
+										DEF: <%- personagem.cavalo.def %>
+									</p>
+								</div>
+							</div>
+							<div class="row justify-content-around">
+								<div class="col-12">
+									<div>
+										Potência: <%- personagem.cavalo.atributos.potencia %>
+									</div>
+									<div>
+										Vigor: <%- personagem.cavalo.atributos.vigor %>
+									</div>
 								</div>
 							</div>
 						</div>
 					</div>
 				</div>
-			</div>
-			<div class="row">
-				<div class="col-6">
-					<h3>Itens cavalo</h3>
-					<div class="vertical-scroll">
-						<% for( let i=0; i < personagem.cavalo.itens.length; i++ ) { %>
+				<div class="row">
+					<div class="col-6">
+						<h3>Itens cavalo</h3>
+						<div class="vertical-scroll">
+							<% for( let i=0; i < personagem.cavalo.itens.length; i++ ) { %>
+								<div class="row">
+									<%- personagem.cavalo.itens[i].nome %>
+								</div>
+								<% } %>
+						</div>
+					</div>
+					<div class="col-6">
+						<div class="container">
+							<h4>
+								Fidelidade: <%- personagem.cavalo.atributos.fidelidade %>
+							</h4>
 							<div class="row">
-								<%- personagem.cavalo.itens[i].nome %>
+								<div class="col-4">
+									<% if (personagem.cavalo.atributos.fidelidade>= 1 ) { %>
+										Adquirido
+										<% } else { %>
+											Não
+											<% }%>
+								</div>
+								<div class="col-8">
+									<label for="fidelidade-0">+ Nome</label>
+								</div>
 							</div>
-							<% } %>
-					</div>
-				</div>
-				<div class="col-6">
-					<div class="container">
-						<h4>
-							Fidelidade: <%- personagem.cavalo.atributos.fidelidade %>
-						</h4>
-						<div class="row">
-							<div class="col-4">
-								<% if (personagem.cavalo.atributos.fidelidade>= 1 ) { %>
-									Adquirido
-									<% } else { %>
-										Não
-										<% }%>
+							<div class="row">
+								<div class="col-4">
+									<% if (personagem.cavalo.atributos.fidelidade>= 2 ) { %>
+										Adquirido
+										<% } else { %>
+											Não
+											<% }%>
+								</div>
+								<div class="col-8">
+									<label for="fidelidade-1">+1 de potência</label>
+								</div>
 							</div>
-							<div class="col-8">
-								<label for="fidelidade-0">+ Nome</label>
+							<div class="row">
+								<div class="col-4">
+									<% if (personagem.cavalo.atributos.fidelidade>= 3 ) { %>
+										Adquirido
+										<% } else { %>
+											Não
+											<% }%>
+								</div>
+								<div class="col-8">
+									<label for="fidelidade-2">
+										+ Assovio e outros não podem montar
+									</label>
+								</div>
 							</div>
-						</div>
-						<div class="row">
-							<div class="col-4">
-								<% if (personagem.cavalo.atributos.fidelidade>= 2 ) { %>
-									Adquirido
-									<% } else { %>
-										Não
-										<% }%>
-							</div>
-							<div class="col-8">
-								<label for="fidelidade-1">+1 de potência</label>
-							</div>
-						</div>
-						<div class="row">
-							<div class="col-4">
-								<% if (personagem.cavalo.atributos.fidelidade>= 3 ) { %>
-									Adquirido
-									<% } else { %>
-										Não
-										<% }%>
-							</div>
-							<div class="col-8">
-								<label for="fidelidade-2">
-									+ Assovio e outros não podem montar
-								</label>
-							</div>
-						</div>
-						<div class="row">
-							<div class="col-4">
-								<% if (personagem.cavalo.atributos.fidelidade>= 4) { %>
-									Adquirido
-									<% } else { %>
-										Não
-										<% }%>
-							</div>
-							<div class="col-8">
-								<label for="fidelidade-3">+2 potência</label>
+							<div class="row">
+								<div class="col-4">
+									<% if (personagem.cavalo.atributos.fidelidade>= 4) { %>
+										Adquirido
+										<% } else { %>
+											Não
+											<% }%>
+								</div>
+								<div class="col-8">
+									<label for="fidelidade-3">+2 potência</label>
+								</div>
 							</div>
 						</div>
 					</div>
 				</div>
 			</div>
 		</div>
-	</div>
+		<% } %>
+
 </div>
 
 <script src="/public/js/character.js"></script>
