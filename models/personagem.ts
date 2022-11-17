@@ -6,7 +6,7 @@ import ItemPersonagem from "./itemPersonagem";
 interface Personagem {
 	id: number;
 	name: string;
-	icon: string;
+	icon: boolean;
 	level: number;
 	exp: number;
 	tormento: {
@@ -50,7 +50,7 @@ class Personagem {
 			return {
 				id: i,
 				name: "Cleide Belinha",
-				icon: "cleide_belinha.jpeg",
+				icon: true,
 				level: 1,
 				exp: 5,
 				tormento: {
@@ -291,19 +291,41 @@ class Personagem {
 		return Promise.resolve(Personagem.personagens[id]);
 	}
 
-	public static insertPersonagem(
+	public static async insertPersonagem(
 		personagem: Personagem,
 		characterImage: app.UploadedFile
 	): Promise<number> {
+		// await app.sql.connect(async (sql) => {
+		// 	await sql.beginTransaction();
+
+		// 	//await sql.query();
+
+		// 	await app.fileSystem.saveUploadedFile(
+		// 		`/public/img/characters/${this.currId}.jpg`,
+		// 		characterImage
+		// 	);
+
+		// 	await sql.commit();
+		// });
+
 		Personagem.currId++;
 
 		personagem.id = this.currId;
 
-		Personagem.personagens.push(personagem);
-
 		//TODO: Assistir aula 13 no canvas pra entender como faz isso
 
-		// await app.fileSystem.saveUploadedFile("public/img/characters/<id da ficha>.jpg", characterImage);
+		if (characterImage !== null) {
+			await app.fileSystem.saveUploadedFile(
+				`/public/img/characters/${this.currId}.jpg`,
+				characterImage
+			);
+		} else {
+			personagem.icon = false;
+		}
+
+		// Se tiver imagem, coloca o icon como true pra poder usar no render
+
+		Personagem.personagens.push(personagem);
 
 		return Promise.resolve(this.currId);
 	}

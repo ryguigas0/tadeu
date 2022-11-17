@@ -95,7 +95,7 @@ class CharactersRoute {
 			dinheiro: reqBody["character-dinheiro"],
 			equipamentos: equipamentos,
 			cavalo: cavalo,
-			icon: "",
+			icon: characterImage !== null,
 			level: reqBody["character-level"],
 			exp: reqBody["character-exp"],
 			tormento: {
