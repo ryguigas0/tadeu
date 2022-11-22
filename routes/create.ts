@@ -71,7 +71,7 @@ class CharactersRoute {
 
 		let personagem: Personagem = {
 			pv: reqBody["character-pv"],
-			name: reqBody["character-name"],
+			nome: reqBody["character-name"],
 			def: reqBody["character-def"],
 			iniciativa: reqBody["character-ini"],
 			acoes: reqBody["character-actions"],
@@ -96,7 +96,7 @@ class CharactersRoute {
 			equipamentos: equipamentos,
 			cavalo: cavalo,
 			icon: characterImage !== null,
-			level: reqBody["character-level"],
+			nivel: reqBody["character-level"],
 			exp: reqBody["character-exp"],
 			tormento: {
 				main: reqBody["character-tormento"],

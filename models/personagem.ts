@@ -5,9 +5,9 @@ import ItemPersonagem from "./itemPersonagem";
 
 interface Personagem {
 	id: number;
-	name: string;
+	nome: string;
 	icon: boolean;
-	level: number;
+	nivel: number;
 	exp: number;
 	tormento: {
 		main: string;
@@ -49,9 +49,9 @@ class Personagem {
 		.map((v, i, arr) => {
 			return {
 				id: i,
-				name: "Cleide Belinha",
+				nome: "Cleide Belinha",
 				icon: true,
-				level: 1,
+				nivel: 1,
 				exp: 5,
 				tormento: {
 					main: "Vício em",
@@ -317,6 +317,7 @@ class Personagem {
 		personagem.id = this.currId;
 
 		//TODO: Assistir aula 13 no canvas pra entender como faz isso
+		//TODO: LEMBRAR DE DAR START NO MYSQL ANTES DE RODAR
 
 		// Se tiver imagem, coloca o icon como true pra poder usar no render
 
