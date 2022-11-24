@@ -95,7 +95,7 @@ class Personagem {
 			equipamentos: JSON.parse(notPeronsagem.equipamentos_json),
 			exp: notPeronsagem.experiencia,
 			habilidades: JSON.parse(notPeronsagem.habilidade_json),
-			icon: notPeronsagem.json == 1,
+			icon: notPeronsagem.icon == 1,
 			iniciativa: notPeronsagem.iniciativa,
 			nivel: notPeronsagem.nivel,
 			pv: notPeronsagem.pv,
