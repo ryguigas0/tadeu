@@ -5,24 +5,24 @@
                 <div class="form-group">
                     <label for="character-def">DEF: </label>
                     <input type="number" class="form-control" id="character-def" name="character-def"
-                        value="<%= personagem.def || 0 %>">
+                        value="<%= (personagem && personagem.def) || 0 %>">
                 </div>
                 <div class="form-group">
                     <label for="character-pv">PV: </label>
                     <input type="number" class="form-control" id="character-pv" name="character-pv"
-                        value="<%= personagem.pv || 0 %>">
+                        value="<%= (personagem && personagem.pv)|| 0 %>">
                 </div>
             </div>
             <div class="col-4 col-sm-2 col-md-2 col-lg-1">
                 <div class="form-group">
                     <label for="character-ini">Iniciativa: </label>
                     <input type="number" class="form-control" id="character-ini" name="character-ini"
-                        value="<%= personagem.iniciativa || 0 %>">
+                        value="<%= (personagem && personagem.iniciativa) || 0 %>">
                 </div>
                 <div class="form-group">
                     <label for="character-actions">Ações: </label>
                     <input type="number" class="form-control" id="character-actions" name="character-actions"
-                        value="<%= personagem.acoes || 0 %>">
+                        value="<%= (personagem && personagem.acoes) || 0 %>">
                 </div>
             </div>
         </div>
@@ -32,24 +32,24 @@
                 <div class="form-group">
                     <label for="character-phy">Fisico: </label>
                     <input type="number" class="form-control" id="character-fisico" name="character-fisico"
-                        value="<%= personagem.atributos.fisico || 0 %>">
+                        value="<%= (personagem && personagem.atributos.fisico) || 0 %>">
                 </div>
                 <div class="form-group">
                     <label for="character-coragem">Coragem: </label>
                     <input type="number" class="form-control" id="character-coragem" name="character-coragem"
-                        value="<%= personagem.atributos.coragem || 0 %>">
+                        value="<%= (personagem && personagem.atributos.coragem) || 0 %>">
                 </div>
             </div>
             <div class="col-4 col-sm-2 col-md-2 col-lg-1">
                 <div class="form-group">
                     <label for="character-inteligencia">Inteligência: </label>
                     <input type="number" class="form-control" id="character-inteligencia" name="character-inteligencia"
-                        value="<%= personagem.atributos.inteligencia || 0 %>">
+                        value="<%= (personagem && personagem.atributos.inteligencia) || 0 %>">
                 </div>
                 <div class="form-group">
                     <label for="character-agilidade">Agilidade: </label>
                     <input type="number" class="form-control" id="character-agilidade" name="character-agilidade"
-                        value="<%= personagem.atributos.agilidade || 0 %>">
+                        value="<%= (personagem && personagem.atributos.agilidade) || 0 %>">
                 </div>
             </div>
         </div>

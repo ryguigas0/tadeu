@@ -21,13 +21,13 @@
                         <div class="form-group">
                             <label for="character-level">Nível: </label>
                             <input type="number" id="character-level" name="character-level" class="form-control"
-                            value="<%= personagem.nivel || 0 %>">
+                            value="<%= (personagem && personagem.nivel) || 0 %>">
                         </div>
                     </div>
                     <div class="col-4 col-sm-3">
                         <div class="form-group">
                             <label for="character-exp">XP: </label>
-                            <input type="number" id="character-exp" name="character-exp" class="form-control" value="<%= personagem.exp || 0 %>">
+                            <input type="number" id="character-exp" name="character-exp" class="form-control" value="<%= (personagem && personagem.exp) || 0 %>">
                         </div>
                     </div>
                 </div>
@@ -35,12 +35,12 @@
                 <div class="form-group">
                     <label for="character-tormento">Tormento</label>
                     <input type="text" class="form-control" id="character-tormento" name="character-tormento"
-                    value="<%= personagem.tormento.main || "" %>">
+                    value="<%= (personagem && personagem.tormento.main) || "" %>">
                 </div>
 
                 <div class="form-group">
                     <label for="character-subtormento">Subtormento</label>
-                    <input type="text" class="form-control" id="character-subtormento" name="character-subtormento" value="<%= personagem.tormento.sub || "" %>">
+                    <input type="text" class="form-control" id="character-subtormento" name="character-subtormento" value="<%= (personagem && personagem.tormento.sub) || "" %>">
                 </div>
             </div>
         </div>

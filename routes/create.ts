@@ -137,26 +137,28 @@ class CharactersRoute {
 		if (req.uploadedFilesArray && req.uploadedFilesArray.length) {
 			characterImage = req.uploadedFilesArray[0];
 		}
+		let cavalo: Cavalo;
 
-		reqBody["item-cavalo"] = parseArray(reqBody["item-cavalo"]);
-		let itensCavalo: ItemCavalo[] = reqBody["item-cavalo"].map((v, i, arr) => {
-			return {
-				nome: v,
+		if (reqBody["character-has-horse"] === 'on') {
+			reqBody["item-cavalo"] = parseArray(reqBody["item-cavalo"]);
+			let itensCavalo: ItemCavalo[] = reqBody["item-cavalo"].map((v, i, arr) => {
+				return {
+					nome: v,
+				};
+			});
+			cavalo = {
+				nome: reqBody["character-cavalo-name"],
+				atributos: {
+					fidelidade: reqBody["character-cavalo-fidelidade"],
+					potencia: reqBody["character-cavalo-potencia"],
+					vigor: reqBody["character-cavalo-vigor"],
+				},
+				dano: reqBody["character-cavalo-dano"],
+				def: reqBody["character-cavalo-def"],
+				pv: reqBody["character-cavalo-pv"],
+				itens: itensCavalo,
 			};
-		});
-
-		let cavalo: Cavalo = {
-			nome: reqBody["character-cavalo-name"],
-			atributos: {
-				fidelidade: reqBody["character-cavalo-fidelidade"],
-				potencia: reqBody["character-cavalo-potencia"],
-				vigor: reqBody["character-cavalo-vigor"],
-			},
-			dano: reqBody["character-cavalo-dano"],
-			def: reqBody["character-cavalo-def"],
-			pv: reqBody["character-cavalo-pv"],
-			itens: itensCavalo,
-		};
+		}
 
 		reqBody["item"] = parseArray(reqBody["item"]);
 		let equipamentos: ItemPersonagem[] = reqBody["item"].map((v, i, arr) => {
