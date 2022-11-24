@@ -91,7 +91,7 @@ class CharactersRoute {
 				roubo: reqBody["character-roubo"],
 				tradicao: reqBody["character-tradicao"],
 			},
-			recompensa: reqBody["recompensa"],
+			recompensa: reqBody["character-recompensa"],
 			dinheiro: reqBody["character-dinheiro"],
 			equipamentos: equipamentos,
 			cavalo: cavalo,

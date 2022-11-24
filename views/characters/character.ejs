@@ -126,19 +126,16 @@
 					Descrição
 				</div>
 			</div>
-			<div class="row">
-				<% for( let i=0; i < personagem.habilidades.length; i++ ) { %>
-					<div class="row">
-						<div class="col-6">
-							<%- personagem.habilidades[i].nome %>
-						</div>
-						<div class="col-6">
-							<%- personagem.habilidades[i].descricao %>
-						</div>
+			<% for( let i=0; i < personagem.habilidades.length; i++ ) { %>
+				<div class="row">
+					<div class="col-6">
+						<%- personagem.habilidades[i].nome %>
 					</div>
-
-					<% } %>
-			</div>
+					<div class="col-6">
+						<%- personagem.habilidades[i].descr %>
+					</div>
+				</div>
+			<% } %>
 		</div>
 	</div>
 	<% if (personagem.cavalo.nome !== '') { %>

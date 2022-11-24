@@ -4,11 +4,11 @@ USE tadeu;
 
 CREATE TABLE personagem (
   id int NOT NULL AUTO_INCREMENT,
+  PRIMARY KEY (id),
   nome varchar(50) NOT NULL,
   icon boolean not null,
-  PRIMARY KEY (id),
   nivel int not null,
-  exp int not null,
+  experiencia int not null,
   tormento varchar(50) not null,
   subtormento varchar(50) not null,
   fisico int not null,
@@ -19,12 +19,11 @@ CREATE TABLE personagem (
   def int not null,
   iniciativa int not null,
   acoes int not null,
-  antecedentesPontos int not null,
-  -- antecedentes json not null,
-  -- habilidade json not null,
-  -- equipamentos json not null
-  -- cavalo json not null
+  antecedentes_pontos int not null,
+  antecedentes_json mediumtext null,
+  habilidade_json mediumtext null,
+  equipamentos_json mediumtext null,
+  cavalo_json mediumtext null,
   recompensa int not null,
-  dinheiro int not null,
-
+  dinheiro int not null
 );

@@ -42,267 +42,120 @@ interface Personagem {
 }
 
 class Personagem {
-	private static readonly personagens: Personagem[] = (
-		new Array(5) as Personagem[]
-	)
-		.fill(null)
-		.map((v, i, arr) => {
-			return {
-				id: i,
-				nome: "Cleide Belinha",
-				icon: true,
-				nivel: 1,
-				exp: 5,
-				tormento: {
-					main: "Vício em",
-					sub: "Adrenalina",
-				},
-				atributos: {
-					fisico: 1,
-					agilidade: 1,
-					inteligencia: 1,
-					coragem: 1,
-				},
-				pv: 11,
-				def: 5,
-				iniciativa: 2,
-				acoes: 2,
-				antecedentesPontos: 5,
-				antecedentes: {
-					combate: 1,
-					labuta: 1,
-					negocios: 1,
-					montaria: 1,
-					tradicao: 1,
-					exploracao: 1,
-					roubo: 1,
-					medicina: 1,
-				},
-				habilidades: [
-					{
-						nome: "Carry on my wayward son",
-						descr: "Inspirações e bônus para outros personagens",
-					},
-					{
-						nome: "Carry on my wayward son",
-						descr: "Inspirações e bônus para outros personagens",
-					},
-					{
-						nome: "Carry on my wayward son",
-						descr: "Inspirações e bônus para outros personagens",
-					},
-					{
-						nome: "Carry on my wayward son",
-						descr: "Inspirações e bônus para outros personagens",
-					},
-					{
-						nome: "Carry on my wayward son",
-						descr: "Inspirações e bônus para outros personagens",
-					},
-					{
-						nome: "Carry on my wayward son",
-						descr: "Inspirações e bônus para outros personagens",
-					},
-					{
-						nome: "Carry on my wayward son",
-						descr: "Inspirações e bônus para outros personagens",
-					},
-					{
-						nome: "Carry on my wayward son",
-						descr: "Inspirações e bônus para outros personagens",
-					},
-					{
-						nome: "Carry on my wayward son",
-						descr: "Inspirações e bônus para outros personagens",
-					},
-					{
-						nome: "Carry on my wayward son",
-						descr: "Inspirações e bônus para outros personagens",
-					},
-					{
-						nome: "Carry on my wayward son",
-						descr: "Inspirações e bônus para outros personagens",
-					},
-					{
-						nome: "Carry on my wayward son",
-						descr: "Inspirações e bônus para outros personagens",
-					},
-					{
-						nome: "Carry on my wayward son",
-						descr: "Inspirações e bônus para outros personagens",
-					},
-					{
-						nome: "Carry on my wayward son",
-						descr: "Inspirações e bônus para outros personagens",
-					},
-					{
-						nome: "Carry on my wayward son",
-						descr: "Inspirações e bônus para outros personagens",
-					},
-					{
-						nome: "Carry on my wayward son",
-						descr: "Inspirações e bônus para outros personagens",
-					},
-					{
-						nome: "Carry on my wayward son",
-						descr: "Inspirações e bônus para outros personagens",
-					},
-					{
-						nome: "Carry on my wayward son",
-						descr: "Inspirações e bônus para outros personagens",
-					},
-					{
-						nome: "Carry on my wayward son",
-						descr: "Inspirações e bônus para outros personagens",
-					},
-					{
-						nome: "Carry on my wayward son",
-						descr: "Inspirações e bônus para outros personagens",
-					},
-					{
-						nome: "Carry on my wayward son",
-						descr: "Inspirações e bônus para outros personagens",
-					},
-					{
-						nome: "Carry on my wayward son",
-						descr: "Inspirações e bônus para outros personagens",
-					},
-					{
-						nome: "Carry on my wayward son",
-						descr: "Inspirações e bônus para outros personagens",
-					},
-					{
-						nome: "Carry on my wayward son",
-						descr: "Inspirações e bônus para outros personagens",
-					},
-				],
-				recompensa: 0,
-				dinheiro: 150,
-				equipamentos: [
-					{
-						nome: "Rifle de precisão",
-						dano: "2d6+3 para acertar de perto",
-					},
-					{
-						nome: "Rifle de precisão",
-						dano: "2d6+3 para acertar de perto",
-					},
-					{
-						nome: "Rifle de precisão",
-						dano: "2d6+3 para acertar de perto",
-					},
-					{
-						nome: "Rifle de precisão",
-						dano: "2d6+3 para acertar de perto",
-					},
-					{
-						nome: "Rifle de precisão",
-						dano: "2d6+3 para acertar de perto",
-					},
-					{
-						nome: "Rifle de precisão",
-						dano: "2d6+3 para acertar de perto",
-					},
-					{
-						nome: "Rifle de precisão",
-						dano: "2d6+3 para acertar de perto",
-					},
-					{
-						nome: "Rifle de precisão",
-						dano: "2d6+3 para acertar de perto",
-					},
-					{
-						nome: "Rifle de precisão",
-						dano: "2d6+3 para acertar de perto",
-					},
-					{
-						nome: "Rifle de precisão",
-						dano: "2d6+3 para acertar de perto",
-					},
-				],
-				cavalo: {
-					nome: "Não Binare",
-					pv: 20,
-					dano: 6,
-					def: 5,
-					atributos: {
-						fidelidade: 1,
-						potencia: 1,
-						vigor: 1,
-					},
-					itens: [
-						{
-							nome: "Rifle de precisão",
-						},
-						{
-							nome: "Rifle de precisão",
-						},
-						{
-							nome: "Rifle de precisão",
-						},
-						{
-							nome: "Rifle de precisão",
-						},
-						{
-							nome: "Rifle de precisão",
-						},
-						{
-							nome: "Rifle de precisão",
-						},
-						{
-							nome: "Rifle de precisão",
-						},
-						{
-							nome: "Rifle de precisão",
-						},
-						{
-							nome: "Rifle de precisão",
-						},
-						{
-							nome: "Rifle de precisão",
-						},
-						{
-							nome: "Rifle de precisão",
-						},
-						{
-							nome: "Rifle de precisão",
-						},
-						{
-							nome: "Rifle de precisão",
-						},
-						{
-							nome: "Rifle de precisão",
-						},
-						{
-							nome: "Rifle de precisão",
-						},
-					],
-				},
-			};
+	public static async getPersonagens(): Promise<Personagem[]> {
+		let resultadoQuery: unknown[];
+
+		await app.sql.connect(async (sql) => {
+			await sql.beginTransaction();
+
+			resultadoQuery = await sql.query("select * from personagem");
+
+			await sql.commit();
 		});
 
-	private static currId = Personagem.personagens.length - 1;
+		let lista: Personagem[] = resultadoQuery.map(this.converterPersonagem);
 
-	public static getPersonagens(): Promise<Personagem[]> {
-		return Promise.resolve(Personagem.personagens);
+		return Promise.resolve(lista);
 	}
 
-	public static getPersonagem(id: number): Promise<Personagem> {
-		return Promise.resolve(Personagem.personagens[id]);
+	public static async getPersonagem(id: number): Promise<Personagem> {
+		let personagem: Personagem;
+
+		await app.sql.connect(async (sql) => {
+			await sql.beginTransaction();
+
+			let resultadoQuery = (await sql.query(
+				"select * from personagem where id = ?",
+				[id]
+			))[0];
+
+			personagem = this.converterPersonagem(resultadoQuery);
+
+			await sql.commit();
+		});
+
+		return Promise.resolve(personagem);
+	}
+
+	private static converterPersonagem(notPeronsagem): Personagem {
+		let personagem: Personagem = {
+			id: notPeronsagem.id,
+			nome: notPeronsagem.nome,
+			atributos: {
+				agilidade: notPeronsagem.agilidade,
+				coragem: notPeronsagem.coragem,
+				fisico: notPeronsagem.fisico,
+				inteligencia: notPeronsagem.inteligencia,
+			},
+			acoes: notPeronsagem.acoes,
+			antecedentesPontos: notPeronsagem.antecedentes_pontos,
+			antecedentes: JSON.parse(notPeronsagem.antecedentes_json),
+			def: notPeronsagem.def,
+			dinheiro: notPeronsagem.dinheiro,
+			equipamentos: JSON.parse(notPeronsagem.equipamentos_json),
+			exp: notPeronsagem.experiencia,
+			habilidades: JSON.parse(notPeronsagem.habilidade_json),
+			icon: notPeronsagem.json == 1,
+			iniciativa: notPeronsagem.iniciativa,
+			nivel: notPeronsagem.nivel,
+			pv: notPeronsagem.pv,
+			recompensa: notPeronsagem.recompensa,
+			tormento: {
+				main: notPeronsagem.tormento,
+				sub: notPeronsagem.subtormento,
+			},
+			cavalo: JSON.parse(notPeronsagem.cavalo_json),
+		};
+
+		return personagem;
 	}
 
 	public static async insertPersonagem(
 		personagem: Personagem,
 		characterImage: app.UploadedFile
 	): Promise<number> {
+		let resultadoQuery;
+
 		await app.sql.connect(async (sql) => {
 			await sql.beginTransaction();
 
-			//await sql.query();
+			const icon = personagem.icon ? 1 : 0;
+
+			resultadoQuery = await sql.query(
+				`insert into personagem (
+					nome, icon, nivel, experiencia, tormento, subtormento, 
+					fisico, agilidade, inteligencia, coragem, pv, def, 
+					iniciativa, acoes, antecedentes_pontos, antecedentes_json, 
+					habilidade_json, equipamentos_json, cavalo_json, recompensa, dinheiro) 
+					values (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?);`,
+				[
+					personagem.nome,
+					icon,
+					personagem.nivel,
+					personagem.exp,
+					personagem.tormento.main,
+					personagem.tormento.sub,
+					personagem.atributos.fisico,
+					personagem.atributos.agilidade,
+					personagem.atributos.inteligencia,
+					personagem.atributos.coragem,
+					personagem.pv,
+					personagem.def,
+					personagem.iniciativa,
+					personagem.acoes,
+					personagem.antecedentesPontos,
+					JSON.stringify(personagem.antecedentes),
+					JSON.stringify(personagem.habilidades),
+					JSON.stringify(personagem.equipamentos),
+					JSON.stringify(personagem.cavalo),
+					personagem.recompensa,
+					personagem.dinheiro,
+				]
+			);
 
 			if (characterImage !== null) {
 				await app.fileSystem.saveUploadedFile(
-					`/public/img/characters/${this.currId}.jpg`,
+					`/public/img/characters/${resultadoQuery.insertId}.jpg`,
 					characterImage
 				);
 			} else {
@@ -311,26 +164,14 @@ class Personagem {
 
 			await sql.commit();
 		});
-
-		Personagem.currId++;
-
-		personagem.id = this.currId;
-
-		//TODO: Assistir aula 13 no canvas pra entender como faz isso
-		//TODO: LEMBRAR DE DAR START NO MYSQL ANTES DE RODAR
-
-		// Se tiver imagem, coloca o icon como true pra poder usar no render
-
-		Personagem.personagens.push(personagem);
-
-		return Promise.resolve(this.currId);
+		return Promise.resolve(resultadoQuery.insertId);
 	}
 
-	public static updatePersonagem(dados: Personagem): Promise<void> {
-		this.personagens[dados.id] = dados;
+	// public static updatePersonagem(dados: Personagem): Promise<void> {
+	// 	this.personagens[dados.id] = dados;
 
-		return Promise.resolve();
-	}
+	// 	return Promise.resolve();
+	// }
 }
 
 export default Personagem;

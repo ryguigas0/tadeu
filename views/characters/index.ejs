@@ -19,18 +19,18 @@
                         col-lg-3 m-3 d-flex flex-column justify-content-around">
                         <div class="row justify-content-center">
                             <img src="<%= root %>/public/img/characters/<%= (personagens[i].icon ? (personagens[i].id + ".jpg") : "default.png") %>"
-                            alt="<%- personagens[i].name %>" class="img-fluid">
+                            alt="<%- personagens[i].nome %>" class="img-fluid">
                         </div>
 
                         <div class="row justify-content-center">
-                            <div class="character-name">
-                                <%= personagens[i].name %>
+                            <div class="character-nome">
+                                <%= personagens[i].nome %>
                             </div>
                         </div>
 
                         <div class="row justify-content-around">
                             <div class="character-level">
-                                NV: <%= personagens[i].level %>
+                                NV: <%= personagens[i].nivel %>
                             </div>
                             <div class="character-pv">
                                 PV: <%= personagens[i].pv %>
