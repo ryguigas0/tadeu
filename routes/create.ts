@@ -44,9 +44,9 @@ class CharactersRoute {
 				potencia: reqBody["character-cavalo-potencia"],
 				vigor: reqBody["character-cavalo-vigor"],
 			},
-			dano: 9,
-			def: 5,
-			pv: 3,
+			dano: reqBody["character-cavalo-dano"],
+			def: reqBody["character-cavalo-def"],
+			pv: reqBody["character-cavalo-pv"],
 			itens: itensCavalo,
 		};
 
