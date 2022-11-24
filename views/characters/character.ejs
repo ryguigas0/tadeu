@@ -1,20 +1,25 @@
 <div class="page container text-center">
 	<div class="row">
-		<div class="col-12">
+		<div class="col-6">
 			<button class="btn btn-danger" onclick="back()">
 				Voltar
+			</button>
+		</div>
+		<div class="col-6">
+			<button class="btn btn-danger" onclick="editar(<%-personagem.id %>)">
+				Editar persoangem
 			</button>
 		</div>
 	</div>
 	<div class="row">
 		<div class="col-6">
-			<img src="<%= root %>/public/img/characters/<%= (personagem.icon ? (personagem.id + ".jpg") : "default.png"
+			<img src="<%= root %>/public/img/characters/<%= (personagem.icon ? (`${personagem.id}.jpg`) : " default.png"
 				) %>"
-			alt="<%- personagem.name %>" class="img-fluid">
+			alt="<%- personagem.nome %>" class="img-fluid">
 		</div>
 		<div class="col-6">
 			<h1>
-				<%- personagem.name %>
+				<%- personagem.nome %>
 			</h1>
 			<p>
 				NV: <%- personagem.level %>
@@ -135,10 +140,10 @@
 						<%- personagem.habilidades[i].descr %>
 					</div>
 				</div>
-			<% } %>
+				<% } %>
 		</div>
 	</div>
-	<% if (personagem.cavalo.nome !== '') { %>
+	<% if (personagem.cavalo.nome !=='' ) { %>
 		<div class="row">
 			<h2>Cavalo</h2>
 			<div class="container">

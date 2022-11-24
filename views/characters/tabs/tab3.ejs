@@ -5,37 +5,45 @@
             <div class="col-4 col-sm-2 col-md-2 col-lg-1">
                 <div class="form-group">
                     <label for="character-combate">Combate: </label>
-                    <input type="number" class="form-control" id="character-combate" name="character-combate">
+                    <input type="number" class="form-control" id="character-combate" name="character-combate"
+                        value="<%= personagem.antecedentes.combate || 0 %>">
                 </div>
                 <div class="form-group">
                     <label for="character-negocios">Negócios: </label>
-                    <input type="number" class="form-control" id="character-negocios" name="character-negocios">
+                    <input type="number" class="form-control" id="character-negocios" name="character-negocios"
+                        value="<%= personagem.antecedentes.negocios || 0 %>">
                 </div>
                 <div class="form-group">
                     <label for="character-montaria">Montaria: </label>
-                    <input type="number" class="form-control" id="character-montaria" name="character-montaria">
+                    <input type="number" class="form-control" id="character-montaria" name="character-montaria"
+                        value="<%= personagem.antecedentes.montaria || 0 %>">
                 </div>
                 <div class="form-group">
                     <label for="character-tradicao">Tradição: </label>
-                    <input type="number" class="form-control" id="character-tradicao" name="character-tradicao">
+                    <input type="number" class="form-control" id="character-tradicao" name="character-tradicao"
+                        value="<%= personagem.antecedentes.tradicao || 0 %>">
                 </div>
             </div>
             <div class="col-4 col-sm-2 col-md-2 col-lg-1">
                 <div class="form-group">
                     <label for="character-exploracao">Exploração: </label>
-                    <input type="number" class="form-control" id="character-exploracao" name="character-exploracao">
+                    <input type="number" class="form-control" id="character-exploracao" name="character-exploracao"
+                        value="<%= personagem.antecedentes.exploracao || 0 %>">
                 </div>
                 <div class="form-group">
                     <label for="character-roubo">Roubo: </label>
-                    <input type="number" class="form-control" id="character-roubo" name="character-roubo">
+                    <input type="number" class="form-control" id="character-roubo" name="character-roubo"
+                        value="<%= personagem.antecedentes.roubo || 0 %>">
                 </div>
                 <div class="form-group">
                     <label for="character-medicina">Medicina: </label>
-                    <input type="number" class="form-control" id="character-medicina" name="character-medicina">
+                    <input type="number" class="form-control" id="character-medicina" name="character-medicina"
+                        value="<%= personagem.antecedentes.medicina || 0 %>">
                 </div>
                 <div class="form-group">
                     <label for="character-labuta">Labuta: </label>
-                    <input type="number" class="form-control" id="character-labuta" name="character-labuta">
+                    <input type="number" class="form-control" id="character-labuta" name="character-labuta"
+                        value="<%= personagem.antecedentes.labuta || 0 %>">
                 </div>
             </div>
         </div>
@@ -43,7 +51,8 @@
             <div class="col-4 col-sm-2 col-md-2 col-lg-1">
                 <div class="form-group ">
                     <label for="character-recompensa">Recompensa: </label>
-                    <input type="number" class="form-control" id="character-recompensa" name="character-recompensa">
+                    <input type="number" class="form-control" id="character-recompensa" name="character-recompensa"
+                        value="<%= personagem.recompensa || 0 %>">
                 </div>
             </div>
         </div>

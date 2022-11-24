@@ -11,26 +11,30 @@
         <div class="row vertical-scroll">
             <div class="col-9 form-group">
                 <% for( let i=0; i < 10; i++ ) { %>
-                    <input type="text" class="form-control" id="<%-`item-${i}`%>" name="item">
+                    <input type="text" class="form-control" id="<%-`item-${i}`%>" name="item"
+                        value="<%= personagem.equipamentos[i].nome || "" %>">
                     <% } %>
             </div>
             <div class="col-3 form-group">
                 <% for( let i=0; i < 10; i++ ) { %>
-                    <input type="text" class="form-control" id="<%-`item-dmg-${i}`%>" name="item-dmg">
+                    <input type="text" class="form-control" id="<%-`item-dmg-${i}`%>" name="item-dmg"
+                        value="<%= personagem.equipamentos[i].dano || "" %>">
                     <% } %>
             </div>
         </div>
         <div class="row">
             <div class="col-6 text-center">
                 <div class="form-group">
-                    <input type="checkbox" class="form-control" id="character-has-horse" name="character-has-horse">
+                    <input type="checkbox" class="form-control" id="character-has-horse" name="character-has-horse"
+                        checked="<%= personagem.cavalo !== null %>">
                     <label for="character-has-horse">O personagem tem cavalo?</label>
                 </div>
             </div>
             <div class="col-6">
                 <div class="form-group">
                     <label for="character-dinheiro">Dinheiro: </label>
-                    <input type="number" class="form-control" id="character-dinheiro" name="character-dinheiro">
+                    <input type="number" class="form-control" id="character-dinheiro" name="character-dinheiro"
+                        value="<%= personagem.dinheiro || 150 %>">
                 </div>
             </div>
         </div>

@@ -17,7 +17,7 @@ function handleBackSection(nextIndex) {
     const beforeTabIndex = nextIndex + 1;
 
     if (nextIndex <= 0) {
-        window.location.href = "./characters"
+        window.location.href = "../characters"
         return
     }
 
@@ -45,7 +45,7 @@ let processando = false;
 
 async function enviarForm() {
     if (processando) {
-        alert("Criando personagem, aguarde!")
+        alert("Processando, aguarde!")
         return;
     }
 
@@ -58,20 +58,30 @@ async function enviarForm() {
     }
 
     try {
-        const opcoes = {
+        let url = "/create/criarPersonagem"
+        let message = "Erro criando personagem"
+        let opcoes = {
             method: "post",
             body: formData
-        };
+        }
+
+        if (personagem && personagem.habilidades) {
+            url = "/create/updatePersonagem"
+            message = "Erro atualizando personagem"
+            opcoes.method = "put"
+            opcoes.body.set("character-id", personagem.id)
+            opcoes.body.set("character-icon", personagem.icon)
+        }
 
         processando = true;
-        const response = await fetch("/create/criarPersonagem", opcoes);
+        const response = await fetch(url, opcoes);
         processando = false;
 
         if (response.ok) {
             let json = await response.json()
-            window.location.href = `/characters/${json.newCharacterId}`
+            window.location.href = `/characters/${json.characterId}`
         } else {
-            alert("Erro criando personagem")
+            alert(message)
         }
 
         return
@@ -84,7 +94,6 @@ async function enviarForm() {
 }
 
 function setHabilidades() {
-
     const habilidadesDiv = document.querySelector("#habilidades")
 
     const habilidades = new Array(24).fill(0).map((val, i, arr) => {
@@ -195,10 +204,21 @@ function setHabilidades() {
     })
 
     habilidades.forEach((hab, i, arr) => {
+        let checked = "";
+
+        if (personagem && personagem.habilidades) {
+            for (let i = 0; i < personagem.habilidades.length; i++) {
+                if (hab.nome === personagem.habilidades[i].nome) {
+                    checked = 'checked="checked"';
+                    break;
+                }
+            }
+        }
+
         habilidadesDiv.innerHTML += `
         <div class="row">
                 <div class="col-4">
-                    <input type="checkbox" class="form-check-input" id="character-habilidade-${i}" name="character-habilidades" value="${i}"/>
+                    <input type="checkbox" class="form-check-input" id="character-habilidade-${i}" name="character-habilidades" value="${i}" ${checked}/>
                 </div>
                 <div class="col-8">
                     <label class="form-check-label" for="character-habilidade-${i}">

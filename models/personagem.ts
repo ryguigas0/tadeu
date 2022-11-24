@@ -64,10 +64,9 @@ class Personagem {
 		await app.sql.connect(async (sql) => {
 			await sql.beginTransaction();
 
-			let resultadoQuery = (await sql.query(
-				"select * from personagem where id = ?",
-				[id]
-			))[0];
+			let resultadoQuery = (
+				await sql.query("select * from personagem where id = ?", [id])
+			)[0];
 
 			personagem = this.converterPersonagem(resultadoQuery);
 
@@ -167,11 +166,76 @@ class Personagem {
 		return Promise.resolve(resultadoQuery.insertId);
 	}
 
-	// public static updatePersonagem(dados: Personagem): Promise<void> {
-	// 	this.personagens[dados.id] = dados;
+	public static async updatePersonagem(
+		personagem: Personagem,
+		characterImage: app.UploadedFile
+	): Promise<number> {
+		await app.sql.connect(async (sql) => {
+			await sql.beginTransaction();
 
-	// 	return Promise.resolve();
-	// }
+			let result =await sql.query(
+				`update personagem set
+				nome = ?, 
+				icon = ?, 
+				nivel = ?, 
+				experiencia = ?, 
+				tormento = ?, 
+				subtormento = ?, 
+				fisico = ?, 
+				agilidade = ?, 
+				inteligencia = ?, 
+				coragem = ?, 
+				pv = ?, 
+				def = ?, 
+				iniciativa = ?, 
+				acoes = ?, 
+				antecedentes_pontos = ?, 
+				antecedentes_json = ?, 
+				habilidade_json = ?, 
+				equipamentos_json = ?, 
+				cavalo_json = ?, 
+				recompensa = ?, 
+				dinheiro = ?
+				where id = ?;`,
+				[
+					personagem.nome,
+					personagem.icon,
+					personagem.nivel,
+					personagem.exp,
+					personagem.tormento.main,
+					personagem.tormento.sub,
+					personagem.atributos.fisico,
+					personagem.atributos.agilidade,
+					personagem.atributos.inteligencia,
+					personagem.atributos.coragem,
+					personagem.pv,
+					personagem.def,
+					personagem.iniciativa,
+					personagem.acoes,
+					personagem.antecedentesPontos,
+					JSON.stringify(personagem.antecedentes),
+					JSON.stringify(personagem.habilidades),
+					JSON.stringify(personagem.equipamentos),
+					JSON.stringify(personagem.cavalo),
+					personagem.recompensa,
+					personagem.dinheiro,
+					personagem.id,
+				]
+			);
+
+			if (characterImage !== null) {
+				await app.fileSystem.saveUploadedFile(
+					`/public/img/characters/${personagem.id}.jpg`,
+					characterImage
+				);
+			} else {
+				personagem.icon = false;
+			}
+
+			await sql.commit();
+		});
+		return Promise.resolve(personagem.id);
+	}
 }
 
 export default Personagem;

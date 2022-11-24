@@ -5,7 +5,8 @@
             <div class="col-12 col-sm-8">
                 <div class="form-group">
                     <label for="character-cavalo-name">Nome:</label>
-                    <input type="text" class="form-control" id="character-cavalo-name" name="character-cavalo-name">
+                    <input type="text" class="form-control" id="character-cavalo-name" name="character-cavalo-name"
+                        value="<%= personagem.cavalo.nome || "" %>">
                 </div>
             </div>
         </div>
@@ -14,30 +15,34 @@
                 <div class="form-group">
                     <label for="character-cavalo-fidelidade">Fidelidade:</label>
                     <input type="number" class="form-control" id="character-cavalo-fidelidade"
-                        name="character-cavalo-fidelidade">
+                        name="character-cavalo-fidelidade" value="<%= personagem.cavalo.atributos.fidelidade || "" %>">
                 </div>
                 <div class="form-group">
                     <label for="character-cavalo-potencia">Potência:</label>
                     <input type="number" class="form-control" id="character-cavalo-potencia"
-                        name="character-cavalo-potencia">
+                        name="character-cavalo-potencia" value="<%= personagem.cavalo.atributos.potencia || "" %>">
                 </div>
                 <div class="form-group">
                     <label for="character-cavalo-vigor">Vigor:</label>
-                    <input type="number" class="form-control" id="character-cavalo-vigor" name="character-cavalo-vigor">
+                    <input type="number" class="form-control" id="character-cavalo-vigor" name="character-cavalo-vigor"
+                        value="<%= personagem.cavalo.atributos.vigor || "" %>">
                 </div>
             </div>
             <div class="col-4 col-sm-2 col-md-2 col-lg-1">
                 <div class="form-group">
                     <label for="character-cavalo-pv">Vida:</label>
-                    <input type="number" class="form-control" id="character-cavalo-pv" name="character-cavalo-pv">
+                    <input type="number" class="form-control" id="character-cavalo-pv" name="character-cavalo-pv"
+                        value="<%= personagem.cavalo.pv || "" %>">
                 </div>
                 <div class="form-group">
                     <label for="character-cavalo-dano">Dano:</label>
-                    <input type="number" class="form-control" id="character-cavalo-dano" name="character-cavalo-dano">
+                    <input type="number" class="form-control" id="character-cavalo-dano" name="character-cavalo-dano"
+                        value="<%= personagem.cavalo.dano || "" %>">
                 </div>
                 <div class="form-group">
                     <label for="character-cavalo-def">DEF:</label>
-                    <input type="number" class="form-control" id="character-cavalo-def" name="character-cavalo-def">
+                    <input type="number" class="form-control" id="character-cavalo-def" name="character-cavalo-def"
+                        value="<%= personagem.cavalo.def || "" %>">
                 </div>
             </div>
             <div class="col-9 col-sm-6">
@@ -45,7 +50,8 @@
                 <div class="container">
                     <div class="form-group vertical-scroll">
                         <% for( let i=0; i < 10; i++ ) { %>
-                            <input type="text" class="form-control" id="<%-`item-cavalo-${i}`%>" name="item-cavalo">
+                            <input type="text" class="form-control" id="<%-`item-cavalo-${i}`%>" name="item-cavalo"
+                                value="<%= personagem.cavalo.itens[i].nome || "" %>">
                             <% } %>
                     </div>
                 </div>
