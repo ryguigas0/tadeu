@@ -1,6 +1,6 @@
 <form class="tab-pane invisible" id="section4" role="tabpanel">
     <div class="container-fluid">
-        <div class="row">
+        <div class="row" data-toggle="tooltip" data-placement="bottom" title="O que seu personagem leva?">
             <div class="col-9">
                 <h2>Equipamentos</h2>
             </div>
@@ -25,12 +25,14 @@
         <div class="row">
             <div class="col-6 text-center">
                 <div class="form-group">
-                    <input type="checkbox" class="form-control" id="character-has-horse" name="character-has-horse" checked="<%= (personagem && personagem.cavalo) %>">
+                    <input type="checkbox" class="form-control" id="character-has-horse" name="character-has-horse"
+                        checked="<%= (personagem && personagem.cavalo) %>">
                     <label for="character-has-horse">O personagem tem cavalo?</label>
                 </div>
             </div>
             <div class="col-6">
-                <div class="form-group">
+                <div class="form-group" data-toggle="tooltip" data-placement="bottom"
+                    title="Quanto dinheiro seu personagem tem no bolso?">
                     <label for="character-dinheiro">Dinheiro: </label>
                     <input type="number" class="form-control" id="character-dinheiro" name="character-dinheiro"
                         value="<%= (personagem && personagem.dinheiro) || 150 %>">

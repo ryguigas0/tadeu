@@ -12,36 +12,41 @@
         </div>
         <div class="row justify-content-center">
             <div class="col-4 col-sm-2 col-md-2 col-lg-1">
-                <div class="form-group">
+                <div class="form-group" data-toggle="tooltip" data-placement="bottom"
+                    title="Quão bem é a relação do seu persoangem e seu cavalo?">
                     <label for="character-cavalo-fidelidade">Fidelidade:</label>
                     <input type="number" class="form-control" id="character-cavalo-fidelidade"
                         name="character-cavalo-fidelidade"
                         value="<%= (personagem && personagem.cavalo && personagem.cavalo.atributos.fidelidade) || "" %>">
                 </div>
-                <div class="form-group">
+                <div class="form-group" data-toggle="tooltip" data-placement="bottom" title="Velocidade na corrida">
                     <label for="character-cavalo-potencia">Potência:</label>
                     <input type="number" class="form-control" id="character-cavalo-potencia"
                         name="character-cavalo-potencia"
                         value="<%= (personagem && personagem.cavalo && personagem.cavalo.atributos.potencia) || "" %>">
                 </div>
-                <div class="form-group">
+                <div class="form-group" data-toggle="tooltip" data-placement="bottom"
+                    title="Quão bom é o físico do seu cavalo?">
                     <label for="character-cavalo-vigor">Vigor:</label>
                     <input type="number" class="form-control" id="character-cavalo-vigor" name="character-cavalo-vigor"
                         value="<%= (personagem && personagem.cavalo && personagem.cavalo.atributos.vigor) || "" %>">
                 </div>
             </div>
             <div class="col-4 col-sm-2 col-md-2 col-lg-1">
-                <div class="form-group">
+                <div class="form-group" data-toggle="tooltip" data-placement="bottom"
+                    title="Quanto dano seu cavalo aguenta">
                     <label for="character-cavalo-pv">Vida:</label>
                     <input type="number" class="form-control" id="character-cavalo-pv" name="character-cavalo-pv"
                         value="<%= (personagem && personagem.cavalo && personagem.cavalo.pv) || "" %>">
                 </div>
-                <div class="form-group">
+                <div class="form-group" data-toggle="tooltip" data-placement="bottom"
+                    title="A força do atropelamento ou coice do seu cavalo">
                     <label for="character-cavalo-dano">Dano:</label>
                     <input type="number" class="form-control" id="character-cavalo-dano" name="character-cavalo-dano"
                         value="<%= (personagem && personagem.cavalo && personagem.cavalo.dano) || "" %>">
                 </div>
-                <div class="form-group">
+                <div class="form-group" data-toggle="tooltip" data-placement="bottom"
+                    title="Quão difícil é acertar o seu cavalo">
                     <label for="character-cavalo-def">DEF:</label>
                     <input type="number" class="form-control" id="character-cavalo-def" name="character-cavalo-def"
                         value="<%= (personagem && personagem.cavalo && personagem.cavalo.def) || "" %>">

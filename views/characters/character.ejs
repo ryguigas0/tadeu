@@ -21,16 +21,19 @@
 			<h1>
 				<%- personagem.nome %>
 			</h1>
-			<p>
+			<p data-toggle="tooltip" data-placement="top"
+				title="Nível: Possibilida ganho de pontos de antecedentes e adição de novas habilidades">
 				NV: <%- personagem.nivel %>
 			</p>
-			<p>
+			<p data-toggle="tooltip" data-placement="top"
+				title="Experiência: Quanto experiente seu personagem é, referir ao livro para determinar seu nível">
 				EXP: <%- personagem.exp %>
 			</p>
-			<p>
+			<p data-toggle="tooltip" data-placement="top" title="Quanto dinheiro seu personagem tem no bolso?">
 				Dinheiro: <%- personagem.dinheiro %>
 			</p>
-			<h2>Tormento</h2>
+			<h2 data-toggle="tooltip" data-placement="top"
+				title="O objetivo que seu personagem quer solucionar, referir ao livro ou ao juíz do jogo">Tormento</h2>
 			<div>
 				<%- personagem.tormento.main %>
 			</div>
@@ -44,23 +47,38 @@
 		<div class="container">
 			<div class="row">
 				<div class="col-6">
-					<div>FIS: <%- personagem.atributos.fisico %>
+					<div data-toggle="tooltip" data-placement="top"
+						title="Físico: Resistência à doenças, venenos e danos">
+						FIS: <%- personagem.atributos.fisico %>
 					</div>
-					<div>INT: <%- personagem.atributos.inteligencia %>
+					<div data-toggle="tooltip" data-placement="top"
+						title="Capacidade de aprender, descobrir, notar, perceber e lembrar">
+						INT: <%- personagem.atributos.inteligencia %>
 					</div>
-					<div>AGI: <%- personagem.atributos.agilidade %>
+					<div data-toggle="tooltip" data-placement="top"
+						title="Agilidade: Destreza, furtividade e habilidade com as mãos">
+						AGI: <%- personagem.atributos.agilidade %>
 					</div>
-					<div>COR: <%- personagem.atributos.coragem %>
+					<div data-toggle="tooltip" data-placement="top"
+						title="Coragem: Vontade, determinação ou falta de noção">
+						COR: <%- personagem.atributos.coragem %>
 					</div>
 				</div>
 				<div class="col-6">
-					<div>PV: <%- personagem.atributos.fisico %>
+					<div data-toggle="tooltip" data-placement="top"
+						title="Pontos de vida: Quanto dano seu personagem aguenta, se chegar a 0 ele corre risco de morrer">
+						PV: <%- personagem.atributos.fisico %>
 					</div>
-					<div>DEF: <%- personagem.atributos.inteligencia %>
+					<div data-toggle="tooltip" data-placement="top"
+						title="Defesa: Quão difícil é acertar seu personagem">
+						DEF: <%- personagem.atributos.inteligencia %>
 					</div>
-					<div>Ações: <%- personagem.atributos.agilidade %>
+					<div data-toggle="tooltip" data-placement="top" title="Quantas ações ele pode fazer em turno">
+						Ações: <%- personagem.atributos.agilidade %>
 					</div>
-					<div>INI: <%- personagem.atributos.coragem %>
+					<div data-toggle="tooltip" data-placement="top"
+						title="Iniciativa: Quanto mais alto, mais provável que a personagem atire primeiro">
+						INI: <%- personagem.atributos.coragem %>
 					</div>
 				</div>
 			</div>
@@ -72,30 +90,37 @@
 		<div class="container">
 			<div class="row">
 				<div class="col-6">
-					<div>
+					<div data-toggle="tooltip" data-placement="top"
+						title="Combate: Quanto o personagem sabe de briga? (Recomendado pelo menos um ponto de acordo com a temática e estilo do jogo)">
 						COMB: <%- personagem.antecedentes.combate %>
 					</div>
-					<div>
+					<div data-toggle="tooltip" data-placement="top"
+						title="Negócios: Quanto o personagem sabe de barganhar, seduzir e/ou intimidar?">
 						NEG: <%- personagem.antecedentes.negocio %>
 					</div>
-					<div>
+					<div data-toggle="tooltip" data-placement="top"
+						title="Montaria: Quanto o personagem sabe de cavalgar e cuidar de um cavalo?">
 						MONT: <%- personagem.antecedentes.montaria %>
 					</div>
-					<div>
+					<div data-toggle="tooltip" data-placement="top"
+						title="tradição: Quanto o personagem sabe do conhecimento e eventos do passado?">
 						TRAD: <%- personagem.antecedentes.tradicao %>
 					</div>
 				</div>
 				<div class="col-6">
-					<div>
+					<div data-toggle="tooltip" data-placement="top"
+						title="Labuta: Quanto trabalho manual seu personagem já fez?">
 						LAB: <%- personagem.antecedentes.labuta %>
 					</div>
-					<div>
+					<div data-toggle="tooltip" data-placement="top"
+						title="Exploração: Quanto o personagem está atento aos seus sentidos e o ambiente?">
 						EXPL: <%- personagem.antecedentes.exploracao %>
 					</div>
-					<div>
+					<div data-toggle="tooltip" data-placement="top" title="Quão bem seu personagem consegue trapacear?">
 						ROUBO: <%- personagem.antecedentes.roubo %>
 					</div>
-					<div>
+					<div data-toggle="tooltip" data-placement="top"
+						title="Medicina: Quão bem o seu persoangem consegue tratar uma ferida ou doença?">
 						MED: <%- personagem.antecedentes.medicina %>
 					</div>
 				</div>
@@ -125,7 +150,8 @@
 				<% } %>
 		</div>
 		<h3>Habilidades</h3>
-		<div class="container vertical-scroll">
+		<div class="container vertical-scroll" data-toggle="tooltip" data-placement="top"
+			title="Como o seu personagem se destaca?">
 			<div class="row">
 				<div class="col-6">
 					Nome
@@ -161,28 +187,33 @@
 					<div class="col-6">
 						<div class="container">
 							<div class="row justify-content-around">
-								<div class="col-3">
+								<div class="col-3" data-toggle="tooltip" data-placement="top"
+									title="Pontos de vida: Quanto dano seu cavalo aguenta?">
 									<p>
 										PV: <%- personagem.cavalo.pv %>
 									</p>
 								</div>
-								<div class="col-3">
+								<div class="col-3" data-toggle="tooltip" data-placement="top"
+									title="A força do atropelamento ou coice do seu cavalo">
 									<p>
 										Dano: <%- personagem.cavalo.dano %>
 									</p>
 								</div>
-								<div class="col-3">
+								<div class="col-3" data-toggle="tooltip" data-placement="top"
+									title="Quão difícil é acertar o seu cavalo">
 									<p>
 										DEF: <%- personagem.cavalo.def %>
 									</p>
 								</div>
 							</div>
 							<div class="row justify-content-around">
-								<div class="col-12">
+								<div class="col-12" data-toggle="tooltip" data-placement="top"
+									title="Velocidade na corrida">
 									<div>
 										Potência: <%- personagem.cavalo.atributos.potencia %>
 									</div>
-									<div>
+									<div data-toggle="tooltip" data-placement="top"
+										title="Quão bom é o físico do seu cavalo?">
 										Vigor: <%- personagem.cavalo.atributos.vigor %>
 									</div>
 								</div>
@@ -202,7 +233,8 @@
 						</div>
 					</div>
 					<div class="col-6">
-						<div class="container">
+						<div class="container" data-toggle="tooltip" data-placement="top"
+							title="Quão bem é a relação do seu persoangem e seu cavalo?">
 							<h4>
 								Fidelidade: <%- personagem.cavalo.atributos.fidelidade %>
 							</h4>

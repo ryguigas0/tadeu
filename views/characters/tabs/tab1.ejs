@@ -2,7 +2,8 @@
     <div class="container-fluid">
         <div class="row justify-content-center">
             <div class="col-sm-6">
-                <div class="text-center">
+                <div class="text-center" data-toggle="tooltip" data-placement="bottom"
+                    title="Como seu personagem se parece? Clique para colocar uma imagem!">
                     <label for="character-image">
                         <img src="/public/svg/character-icon-template.svg" alt="Character icon" class="character-icon">
                         <input type="file" id="character-image" name="character-image" hidden
@@ -18,29 +19,35 @@
 
                 <div class="row">
                     <div class="col-4 col-sm-3">
-                        <div class="form-group">
+                        <div class="form-group" data-toggle="tooltip" data-placement="bottom"
+                            title="Possibilida ganho de pontos de antecedentes e adição de novas habilidades">
                             <label for="character-level">Nível: </label>
                             <input type="number" id="character-level" name="character-level" class="form-control"
-                            value="<%= (personagem && personagem.nivel) || 0 %>">
+                                value="<%= (personagem && personagem.nivel) || 0 %>">
                         </div>
                     </div>
                     <div class="col-4 col-sm-3">
-                        <div class="form-group">
+                        <div class="form-group" data-toggle="tooltip" data-placement="bottom"
+                            title="Quanto experiente seu personagem é, referir ao livro para determinar seu nível">
                             <label for="character-exp">XP: </label>
-                            <input type="number" id="character-exp" name="character-exp" class="form-control" value="<%= (personagem && personagem.exp) || 0 %>">
+                            <input type="number" id="character-exp" name="character-exp" class="form-control"
+                                value="<%= (personagem && personagem.exp) || 0 %>">
                         </div>
                     </div>
                 </div>
 
-                <div class="form-group">
-                    <label for="character-tormento">Tormento</label>
-                    <input type="text" class="form-control" id="character-tormento" name="character-tormento"
-                    value="<%= (personagem && personagem.tormento.main) || "" %>">
-                </div>
-
-                <div class="form-group">
-                    <label for="character-subtormento">Subtormento</label>
-                    <input type="text" class="form-control" id="character-subtormento" name="character-subtormento" value="<%= (personagem && personagem.tormento.sub) || "" %>">
+                <div data-toggle="tooltip" data-placement="top"
+                    title="O objetivo que seu personagem quer solucionar, referir ao livro ou ao juíz do jogo">
+                    <div class="form-group">
+                        <label for="character-tormento">Tormento</label>
+                        <input type="text" class="form-control" id="character-tormento" name="character-tormento"
+                            value="<%= (personagem && personagem.tormento.main) || "" %>">
+                    </div>
+                    <div class="form-group">
+                        <label for="character-subtormento">Subtormento</label>
+                        <input type="text" class="form-control" id="character-subtormento" name="character-subtormento"
+                            value="<%= (personagem && personagem.tormento.sub) || "" %>">
+                    </div>
                 </div>
             </div>
         </div>

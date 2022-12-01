@@ -3,44 +3,52 @@
         <h3>Antecedentes</h3>
         <div class="row justify-content-center">
             <div class="col-4 col-sm-2 col-md-2 col-lg-1">
-                <div class="form-group">
+                <div class="form-group" data-toggle="tooltip" data-placement="bottom"
+                    title="Quanto o personagem sabe de briga? (Recomendado pelo menos um ponto de acordo com a temática e estilo do jogo)">
                     <label for="character-combate">Combate: </label>
                     <input type="number" class="form-control" id="character-combate" name="character-combate"
                         value="<%= (personagem && personagem.antecedentes.combate) || 0 %>">
                 </div>
-                <div class="form-group">
+                <div class="form-group" data-toggle="tooltip" data-placement="bottom"
+                    title="Quanto o personagem sabe de barganhar, seduzir e/ou intimidar?">
                     <label for="character-negocios">Negócios: </label>
                     <input type="number" class="form-control" id="character-negocios" name="character-negocios"
                         value="<%= (personagem && personagem.antecedentes.negocios) || 0 %>">
                 </div>
-                <div class="form-group">
+                <div class="form-group" data-toggle="tooltip" data-placement="bottom"
+                    title="Quanto o personagem sabe de cavalgar e cuidar de um cavalo?">
                     <label for="character-montaria">Montaria: </label>
                     <input type="number" class="form-control" id="character-montaria" name="character-montaria"
                         value="<%= (personagem && personagem.antecedentes.montaria) || 0 %>">
                 </div>
-                <div class="form-group">
+                <div class="form-group" data-toggle="tooltip" data-placement="bottom"
+                    title="Quanto o personagem sabe do conhecimento e eventos do passado?">
                     <label for="character-tradicao">Tradição: </label>
                     <input type="number" class="form-control" id="character-tradicao" name="character-tradicao"
                         value="<%= (personagem && personagem.antecedentes.tradicao) || 0 %>">
                 </div>
             </div>
             <div class="col-4 col-sm-2 col-md-2 col-lg-1">
-                <div class="form-group">
+                <div class="form-group" data-toggle="tooltip" data-placement="bottom"
+                    title="Quanto o personagem está atento aos seus sentidos e o ambiente?">
                     <label for="character-exploracao">Exploração: </label>
                     <input type="number" class="form-control" id="character-exploracao" name="character-exploracao"
                         value="<%= (personagem && personagem.antecedentes.exploracao) || 0 %>">
                 </div>
-                <div class="form-group">
+                <div class="form-group" data-toggle="tooltip" data-placement="bottom"
+                    title="Quão bem seu personagem consegue trapacear?">
                     <label for="character-roubo">Roubo: </label>
                     <input type="number" class="form-control" id="character-roubo" name="character-roubo"
                         value="<%= (personagem && personagem.antecedentes.roubo) || 0 %>">
                 </div>
-                <div class="form-group">
+                <div class="form-group" data-toggle="tooltip" data-placement="bottom"
+                    title="Quão bem o seu persoangem consegue tratar uma ferida ou doença?">
                     <label for="character-medicina">Medicina: </label>
                     <input type="number" class="form-control" id="character-medicina" name="character-medicina"
                         value="<%= (personagem && personagem.antecedentes.medicina) || 0 %>">
                 </div>
-                <div class="form-group">
+                <div class="form-group" data-toggle="tooltip" data-placement="bottom"
+                    title="Quanto trabalho manual seu personagem já fez?">
                     <label for="character-labuta">Labuta: </label>
                     <input type="number" class="form-control" id="character-labuta" name="character-labuta"
                         value="<%= (personagem && personagem.antecedentes.labuta) || 0 %>">
@@ -49,7 +57,8 @@
         </div>
         <div class="row justify-content-center">
             <div class="col-4 col-sm-2 col-md-2 col-lg-1">
-                <div class="form-group ">
+                <div class="form-group" data-toggle="tooltip" data-placement="bottom"
+                    title="Quanto a cabeça do seu persoangem vale?">
                     <label for="character-recompensa">Recompensa: </label>
                     <input type="number" class="form-control" id="character-recompensa" name="character-recompensa"
                         value="<%= (personagem && personagem.recompensa) || 0 %>">
@@ -58,7 +67,8 @@
         </div>
 
         <h3>Habilidades</h3>
-        <div class="container-fluid form-check vertical-scroll" id="habilidades">
+        <div class="container-fluid form-check vertical-scroll" id="habilidades" data-toggle="tooltip"
+            data-placement="bottom" title="No que seu persoangem se destaca?">
             <div class="row">
                 <div class="col-4">Ativa</div>
                 <div class="col-8">Habilidade</div>

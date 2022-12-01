@@ -2,24 +2,28 @@
     <div class="container-fluid text-center">
         <div class="row justify-content-center">
             <div class="col-4 col-sm-2 col-md-2 col-lg-1">
-                <div class="form-group">
+                <div class="form-group" data-toggle="tooltip" data-placement="bottom"
+                    title="Quão difícil é acertar seu personagem">
                     <label for="character-def">DEF: </label>
                     <input type="number" class="form-control" id="character-def" name="character-def"
                         value="<%= (personagem && personagem.def) || 0 %>">
                 </div>
-                <div class="form-group">
+                <div class="form-group" data-toggle="tooltip" data-placement="bottom"
+                    title="Quanto dano seu personagem aguenta, se chegar a 0 ele corre risco de morrer">
                     <label for="character-pv">PV: </label>
                     <input type="number" class="form-control" id="character-pv" name="character-pv"
                         value="<%= (personagem && personagem.pv)|| 0 %>">
                 </div>
             </div>
             <div class="col-4 col-sm-2 col-md-2 col-lg-1">
-                <div class="form-group">
+                <div class="form-group" data-toggle="tooltip" data-placement="bottom"
+                    title="Quanto mais alto, mais provável que a personagem atire primeiro">
                     <label for="character-ini">Iniciativa: </label>
                     <input type="number" class="form-control" id="character-ini" name="character-ini"
                         value="<%= (personagem && personagem.iniciativa) || 0 %>">
                 </div>
-                <div class="form-group">
+                <div class="form-group" data-toggle="tooltip" data-placement="bottom"
+                    title="Quantas ações ele pode fazer em um turno">
                     <label for="character-actions">Ações: </label>
                     <input type="number" class="form-control" id="character-actions" name="character-actions"
                         value="<%= (personagem && personagem.acoes) || 0 %>">
@@ -29,24 +33,28 @@
         <h3>Atributos</h3>
         <div class="row justify-content-center">
             <div class="col-4 col-sm-2 col-md-2 col-lg-1">
-                <div class="form-group">
+                <div class="form-group" data-toggle="tooltip" data-placement="top"
+                    title="Resistência à doenças, venenos e danos">
                     <label for="character-phy">Fisico: </label>
                     <input type="number" class="form-control" id="character-fisico" name="character-fisico"
                         value="<%= (personagem && personagem.atributos.fisico) || 0 %>">
                 </div>
-                <div class="form-group">
+                <div class="form-group" data-toggle="tooltip" data-placement="top"
+                    title="Vontade, determinação ou falta de noção">
                     <label for="character-coragem">Coragem: </label>
                     <input type="number" class="form-control" id="character-coragem" name="character-coragem"
                         value="<%= (personagem && personagem.atributos.coragem) || 0 %>">
                 </div>
             </div>
             <div class="col-4 col-sm-2 col-md-2 col-lg-1">
-                <div class="form-group">
+                <div class="form-group" data-toggle="tooltip" data-placement="top"
+                    title="Capacidade de aprender, descobrir, notar, perceber e lembrar">
                     <label for="character-inteligencia">Inteligência: </label>
                     <input type="number" class="form-control" id="character-inteligencia" name="character-inteligencia"
                         value="<%= (personagem && personagem.atributos.inteligencia) || 0 %>">
                 </div>
-                <div class="form-group">
+                <div class="form-group" data-toggle="tooltip" data-placement="top"
+                    title="Destreza, furtividade e habilidade com as mãos">
                     <label for="character-agilidade">Agilidade: </label>
                     <input type="number" class="form-control" id="character-agilidade" name="character-agilidade"
                         value="<%= (personagem && personagem.atributos.agilidade) || 0 %>">

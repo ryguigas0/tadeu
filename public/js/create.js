@@ -1,5 +1,11 @@
 setHabilidades()
 
+$(function () {
+    $('[data-toggle="tooltip"]').mouseenter(function () {
+        $(this).tooltip("show")
+    })
+})
+
 function handleNextSection(nextIndex) {
     const beforeTabIndex = nextIndex - 1;
 
