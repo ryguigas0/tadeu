@@ -76,28 +76,36 @@
     $("#section2").validate({
         rules: {
             "character-def": {
-                required: true
+                required: true,
+                min: 1
             },
             "character-pv": {
-                required: true
+                required: true,
+                min: 0
             },
             "character-ini": {
-                required: true
+                required: true,
+                min: 0
             },
             "character-actions": {
-                required: true
+                required: true,
+                min: 1
             },
             "character-fisico": {
-                required: true
+                required: true,
+                range: [0, 4]
             },
             "character-inteligencia": {
-                required: true
+                required: true,
+                range: [0, 4]
             },
             "character-agilidade": {
-                required: true
+                required: true,
+                range: [0, 4]
             },
             "character-coragem": {
-                required: true
+                required: true,
+                range: [0, 4]
             }
         },
 

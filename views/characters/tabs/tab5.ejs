@@ -17,19 +17,19 @@
                     <label for="character-cavalo-fidelidade">Fidelidade:</label>
                     <input type="number" class="form-control" id="character-cavalo-fidelidade"
                         name="character-cavalo-fidelidade"
-                        value="<%= (personagem && personagem.cavalo && personagem.cavalo.atributos.fidelidade) || "" %>">
+                        value="<%= (personagem && personagem.cavalo && personagem.cavalo.atributos.fidelidade) || 1 %>">
                 </div>
                 <div class="form-group" data-toggle="tooltip" data-placement="bottom" title="Velocidade na corrida">
                     <label for="character-cavalo-potencia">Potência:</label>
                     <input type="number" class="form-control" id="character-cavalo-potencia"
                         name="character-cavalo-potencia"
-                        value="<%= (personagem && personagem.cavalo && personagem.cavalo.atributos.potencia) || "" %>">
+                        value="<%= (personagem && personagem.cavalo && personagem.cavalo.atributos.potencia) || 1 %>">
                 </div>
                 <div class="form-group" data-toggle="tooltip" data-placement="bottom"
                     title="Quão bom é o físico do seu cavalo?">
                     <label for="character-cavalo-vigor">Vigor:</label>
                     <input type="number" class="form-control" id="character-cavalo-vigor" name="character-cavalo-vigor"
-                        value="<%= (personagem && personagem.cavalo && personagem.cavalo.atributos.vigor) || "" %>">
+                        value="<%= (personagem && personagem.cavalo && personagem.cavalo.atributos.vigor) || 1%>">
                 </div>
             </div>
             <div class="col-4 col-sm-2 col-md-2 col-lg-1">
@@ -37,19 +37,19 @@
                     title="Quanto dano seu cavalo aguenta">
                     <label for="character-cavalo-pv">Vida:</label>
                     <input type="number" class="form-control" id="character-cavalo-pv" name="character-cavalo-pv"
-                        value="<%= (personagem && personagem.cavalo && personagem.cavalo.pv) || "" %>">
+                        value="<%= (personagem && personagem.cavalo && personagem.cavalo.pv) || 0 %>">
                 </div>
                 <div class="form-group" data-toggle="tooltip" data-placement="bottom"
                     title="A força do atropelamento ou coice do seu cavalo">
                     <label for="character-cavalo-dano">Dano:</label>
                     <input type="number" class="form-control" id="character-cavalo-dano" name="character-cavalo-dano"
-                        value="<%= (personagem && personagem.cavalo && personagem.cavalo.dano) || "" %>">
+                        value="<%= (personagem && personagem.cavalo && personagem.cavalo.dano) || 0 %>">
                 </div>
                 <div class="form-group" data-toggle="tooltip" data-placement="bottom"
-                    title="Quão difícil é acertar o seu cavalo">
+                    title="Quão difícil é acertar o seu">
                     <label for="character-cavalo-def">DEF:</label>
                     <input type="number" class="form-control" id="character-cavalo-def" name="character-cavalo-def"
-                        value="<%= (personagem && personagem.cavalo && personagem.cavalo.def) || "" %>">
+                        value="<%= (personagem && personagem.cavalo && personagem.cavalo.def) || 5 %>">
                 </div>
             </div>
             <div class="col-9 col-sm-6">
@@ -79,12 +79,34 @@
 <script>
     $("#section5").validate({
         rules: {
-            "character-has-horse": {
+            "character-cavalo-name": {
                 required: true
             },
-            "character-dinheiro": {
-                required: true
+            "character-cavalo-fidelidade": {
+                required: true,
+                range: [1, 4]
             },
+            "character-cavalo-potencia": {
+                required: true,
+                range: [1, 4]
+            },
+            "character-cavalo-vigor": {
+                required: true,
+                range: [1, 4]
+            },
+            "character-cavalo-pv": {
+                required: true,
+                min: 0
+            },
+            "character-cavalo-dano": {
+                required: true,
+                min: 0
+            },
+            "character-cavalo-def": {
+                required: true,
+                min: 0
+            }
+
         },
         submitHandler: form => {
             enviarForm()

@@ -91,31 +91,40 @@
     $("#section3").validate({
         rules: {
             "character-combate": {
-                required: true
+                required: true,
+                range: [0, 5]
             },
             "character-negocios": {
-                required: true
+                required: true,
+                range: [0, 5]
             },
             "character-montaria": {
-                required: true
+                required: true,
+                range: [0, 5]
             },
             "character-tradicao": {
-                required: true
+                required: true,
+                range: [0, 5]
             },
             "character-roubo": {
-                required: true
+                required: true,
+                range: [0, 5]
             },
             "character-exploracao": {
-                required: true
+                required: true,
+                range: [0, 5]
             },
             "character-medicina": {
-                required: true
+                required: true,
+                range: [0, 5]
             },
             "character-labuta": {
-                required: true
+                required: true,
+                range: [0, 5]
             },
             "character-recompensa": {
-                required: true
+                required: true,
+                min: 0
             }
         },
 
